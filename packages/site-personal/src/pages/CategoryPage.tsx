@@ -6,7 +6,7 @@ import { ProjectCollection } from '../components/ProjectCollection';
 const categoryDetails: Record<string, { title: string; intro: string }> = {
   systems: {
     title: 'Systems & Compilers',
-    intro: 'Compilers, runtimes, and infrastructure built close to the machine.'
+    intro: 'Compilers, runtimes, and infrastructure.'
   },
   tools: {
     title: 'Tools & Visualizers',
