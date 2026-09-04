@@ -1,18 +1,18 @@
 {
-  "name": "sandra-suh-portfolio",
+  "name": "juan-sanchez-portfolio",
   "private": true,
   "workspaces": [
     "packages/shared",
-    "packages/site-sandra"
+    "packages/site-personal"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=packages/site-sandra",
-    "build": "npm run build --workspace=packages/site-sandra",
-    "preview": "npm run preview --workspace=packages/site-sandra",
-    "dev:sandra": "npm run dev --workspace=packages/site-sandra",
-    "build:sandra": "npm run build --workspace=packages/site-sandra",
-    "preview:sandra": "npm run preview --workspace=packages/site-sandra",
-    "deploy:sandra": "npm run build:sandra && npm run deploy --workspace=packages/site-sandra",
+    "dev": "npm run dev --workspace=packages/site-personal",
+    "build": "npm run build --workspace=packages/site-personal",
+    "preview": "npm run preview --workspace=packages/site-personal",
+    "dev:juan": "npm run dev --workspace=packages/site-personal",
+    "build:juan": "npm run build --workspace=packages/site-personal",
+    "preview:juan": "npm run preview --workspace=packages/site-personal",
+    "deploy:juan": "npm run build:juan && npm run deploy --workspace=packages/site-personal",
     "test": "vitest run",
     "test:watch": "vitest"
   },
