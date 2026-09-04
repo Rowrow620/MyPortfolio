@@ -214,6 +214,7 @@ frameout(damage(35, true)); // Outputs: 70`
       summary: 'A Harmony-based mod for Lobotomy Corporation that gives you unlimited LOB points (used to purchase agents) and infinite agent hiring slots in-game.',
       tags: ['C#', '.NET', 'Harmony Hooks', 'Game Modding', 'Lobotomy Corp'],
       githubUrl: 'https://github.com/Rowrow620/UnlimitedLOBPointsAndAgents',
+      liveUrl: 'https://www.nexusmods.com/lobotomycorporation/mods/1282',
       stats: [
         { label: 'Platform', value: 'NexusMods' },
         { label: 'Framework', value: 'Harmony Hooks' }
@@ -239,6 +240,7 @@ frameout(damage(35, true)); // Outputs: 70`
       summary: 'Harmony-based runtime speed multiplier mod for Lobotomy Corporation unlocking customizable 4x, 8x, and 16x game loops.',
       tags: ['C#', '.NET', 'Harmony Hooks', 'Unity Engine', 'Game Modding', 'Tutorials'],
       githubUrl: 'https://github.com/Rowrow620/FastForwardSpeed',
+      liveUrl: 'https://www.nexusmods.com/lobotomycorporation/mods/1281',
       stats: [
         { label: 'Platform', value: 'NexusMods' },
         { label: 'Multipliers', value: 'Up to 16x' },

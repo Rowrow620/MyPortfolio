@@ -10,7 +10,7 @@ import { ContactPage } from './pages/ContactPage';
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/MyPortfolio/">
       <Layout config={siteConfig}>
         <Routes>
           <Route path="/" element={<HomePage />} />

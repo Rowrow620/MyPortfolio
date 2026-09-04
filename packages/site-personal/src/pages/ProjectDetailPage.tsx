@@ -50,7 +50,7 @@ export const ProjectDetailPage: React.FC = () => {
               rel="noopener noreferrer"
               className={`${styles.actionBtn} ${styles.primaryBtn}`}
             >
-              {['web', 'file-editors'].includes(project.category) ? 'Visit Live Site' : 'Live Demo'} ↗
+              {project.liveUrl.includes('nexusmods.com') ? 'View on NexusMods' : ['web', 'file-editors'].includes(project.category) ? 'Visit Live Site' : 'Live Demo'} ↗
             </a>
           )}
           {project.githubUrl && (
@@ -88,7 +88,7 @@ export const ProjectDetailPage: React.FC = () => {
       {project.image && (
         <figure className={styles.demoMedia}>
           <img
-            src={project.image}
+            src={project.image.startsWith('/') ? `${import.meta.env.BASE_URL}${project.image.slice(1)}` : project.image}
             alt={project.imageAlt || `${project.title} preview`}
             style={{ aspectRatio: project.aspectRatio }}
           />

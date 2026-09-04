@@ -38,7 +38,7 @@ const CollectionCard: React.FC<{ project: ProjectData; index: number }> = ({ pro
       <div className={styles.preview}>
         {showImage ? (
           <img
-            src={image}
+            src={image.startsWith('/') ? `${import.meta.env.BASE_URL}${image.slice(1)}` : image}
             alt={project.imageAlt || `${project.title} ${isDemo ? 'application demo' : 'project preview'}`}
             className={styles.previewImage}
             loading={index < 2 ? 'eager' : 'lazy'}
