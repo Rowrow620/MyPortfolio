@@ -6,7 +6,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   // Replace base with your GitHub repo name if deploying as project page, e.g. '/portfolio/'
-  base: '/',
+  base: '/MyPortfolio/',
   resolve: {
     alias: {
       '@portfolio/shared': path.resolve(__dirname, '../shared')
