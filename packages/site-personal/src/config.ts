@@ -272,6 +272,8 @@ int main() {
       id: 'unlimited-lob',
       title: 'Unlimited LOB Points & Agents',
       category: 'mods',
+      image: '/images/unlimited-lob.png',
+      imageAlt: 'LOB POINT and HIRE (∞) buttons displaying unlimited resources mod in Lobotomy Corporation',
       showOnHome: false,
       size: 'medium',
       gradient: 'linear-gradient(135deg, #240046 0%, #3c096c 50%, #5a189a 100%)',
