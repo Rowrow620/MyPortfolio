@@ -336,6 +336,8 @@ int main() {
       id: 'kh-save-editor-keyblade',
       title: 'KH Save Editor - Keyblade',
       category: 'mods',
+      image: '/images/kh-save-editor.png',
+      imageAlt: 'Screenshot of the Kingdom Hearts Save Editor interface',
       showOnHome: false,
       size: 'medium',
       gradient: 'linear-gradient(135deg, #1f005c 0%, #5b0060 50%, #870160 100%)',
