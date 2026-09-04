@@ -50,7 +50,7 @@ export const ProjectDetailPage: React.FC = () => {
               rel="noopener noreferrer"
               className={`${styles.actionBtn} ${styles.primaryBtn}`}
             >
-              Live Demo ↗
+              {project.category === 'web' ? 'Visit Live Site' : 'Live Demo'} ↗
             </a>
           )}
           {project.githubUrl && (
