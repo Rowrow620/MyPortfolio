@@ -13,15 +13,22 @@ const categoryDetails: Record<string, { title: string; intro: string }> = {
     intro: 'Native and browser-based tools for learning, creating, and exploring.'
   },
   mods: {
-    title: 'Game Mods',
-    intro: 'Runtime extensions and custom game mechanics built with C# and Harmony.'
+    title: 'Mods & Game Tools',
+    intro: 'Runtime extensions, game file editors, and custom game mechanics.'
   }
 };
 
 export const CategoryPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const filteredProjects = siteConfig.projects.filter(
-    (p) => p.category.toLowerCase() === slug?.toLowerCase()
+    (p) => {
+      const cat = p.category.toLowerCase();
+      const targetSlug = slug?.toLowerCase();
+      if (targetSlug === 'mods') {
+        return cat === 'mods' || cat === 'file-editors';
+      }
+      return cat === targetSlug;
+    }
   );
 
   const details = categoryDetails[slug?.toLowerCase() || ''] || {

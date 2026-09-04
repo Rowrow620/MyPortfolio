@@ -33,7 +33,8 @@ export const siteConfig: SiteConfig = {
       path: '/category/mods',
       children: [
         { label: 'Unlimited LOB Points & Agents', path: '/project/unlimited-lob' },
-        { label: 'FastForwardSpeed (Game Multipliers)', path: '/project/fastforwardspeed' }
+        { label: 'FastForwardSpeed (Game Multipliers)', path: '/project/fastforwardspeed' },
+        { label: 'KH Save Editor - Keyblade', path: '/project/kh-save-editor-keyblade' }
       ]
     },
     { label: 'About & Skills', path: '/about' },
@@ -337,7 +338,7 @@ int main() {
     {
       id: 'kh-save-editor-keyblade',
       title: 'KH Save Editor - Keyblade',
-      category: 'mods',
+      category: 'file-editors',
       image: '/images/kh-save-editor.png',
       imageAlt: 'Screenshot of the Kingdom Hearts Save Editor interface',
       showOnHome: false,

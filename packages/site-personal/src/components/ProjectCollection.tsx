@@ -12,7 +12,8 @@ const overviewTitles: Record<string, string> = {
 const categoryLabels: Record<string, string> = {
   systems: 'Systems & infrastructure',
   tools: 'Tools & visualizers',
-  mods: 'Game mods'
+  mods: 'Game mods',
+  'file-editors': 'File editing tool'
 };
 
 const CollectionCard: React.FC<{ project: ProjectData; index: number }> = ({ project, index }) => {
