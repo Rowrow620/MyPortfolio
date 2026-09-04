@@ -83,28 +83,16 @@ export const ProjectDetailPage: React.FC = () => {
         </aside>
       )}
 
-      {/* Keep recorded demos readable instead of cropping them into a backdrop. */}
-      {project.image && project.imagePresentation === 'demo' ? (
+
+
+      {project.image && (
         <figure className={styles.demoMedia}>
           <img
             src={project.image}
-            alt={project.imageAlt || `${project.title} demo`}
+            alt={project.imageAlt || `${project.title} preview`}
             style={{ aspectRatio: project.aspectRatio }}
           />
-          <figcaption>{project.title} — recorded application demo</figcaption>
         </figure>
-      ) : (
-        <div
-          className={styles.banner}
-          style={{
-            background: project.image
-              ? `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('${project.image}') center/cover no-repeat`
-              : project.gradient || 'linear-gradient(135deg, #111, #222)'
-          }}
-        >
-          <div className={styles.bannerBadge}>{project.title}</div>
-          <div className={styles.bannerSubtitle}>[ Architecture & System Overview ]</div>
-        </div>
       )}
 
       {/* Metrics / Stats Grid */}

@@ -92,12 +92,9 @@ export const ProjectCollection: React.FC<ProjectCollectionProps> = ({ projects, 
   <section className={styles.page} aria-labelledby={headingId}>
     <div className={styles.sectionHeader}>
       <div>
-        <h2 id={headingId} className={styles.heading}>{title}<span aria-hidden="true">.</span></h2>
-        <p className={styles.intro}>{intro}</p>
+        {title && <h2 id={headingId} className={styles.heading}>{title}<span aria-hidden="true">.</span></h2>}
+        {intro && <p className={styles.intro}>{intro}</p>}
       </div>
-      <span className={styles.projectCount}>
-        {String(projects.length).padStart(2, '0')} {projects.length === 1 ? 'project' : 'projects'}
-      </span>
     </div>
 
     <div className={styles.grid}>

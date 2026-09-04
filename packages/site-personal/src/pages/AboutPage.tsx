@@ -31,10 +31,12 @@ const skillCategories: SkillCategory[] = [
     skills: [
       'Memory Management',
       'Low-Latency Optimization',
+      'Directed Acyclic Graphs (DAG)',
       'Data Structures & Algorithms',
       'Compilers & Stack Bytecode VMs',
       'Distributed Leases & Job Semantics',
-      'Deterministic Snapshot Engines'
+      'Deterministic Snapshot Engines',
+      'Monorepo Architectures'
     ]
   },
   {
@@ -47,8 +49,10 @@ const skillCategories: SkillCategory[] = [
       'Git & GitHub Actions (CI/CD)',
       'Docker',
       'CMake & Ninja',
+      'Build Systems & Task Runners',
       'egui / eframe (Rust GUI)',
-      'React & Vite',
+      'React, Vite & CSS Modules',
+      'Game Save Data Editing',
       'Perfetto / Chrome Tracing'
     ]
   }
@@ -101,7 +105,7 @@ export const AboutPage: React.FC = () => {
           My focus is in <strong>systems programming, distributed compute, compilers, GPU acceleration, and interactive tools</strong> in C++20, Go, and Rust.
         </p>
         <p>
-          I have built durable distributed GPU compute engines (<Link to="/project/anvilmesh" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>AnvilMesh</Link>), custom programming language virtual machines (<Link to="/project/framestepp" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>FrameStep++</Link>), wait-free shared-memory tracing systems (<Link to="/project/traceforge" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>TraceForge</Link>), interactive 150-algorithm visualizer suites (<Link to="/project/algobuddy" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>AlgoBuddy</Link>), and runtime game engine modding plugins.
+          I have built durable distributed GPU compute engines (<Link to="/project/anvilmesh" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>AnvilMesh</Link>), custom programming language virtual machines (<Link to="/project/framestepp" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>FrameStep++</Link>), native DAG-based task runners (<Link to="/project/forge" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>Forge</Link>), interactive 150-algorithm visualizer suites (<Link to="/project/algobuddy" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>AlgoBuddy</Link>), and runtime game engine modding plugins.
         </p>
       </div>
 

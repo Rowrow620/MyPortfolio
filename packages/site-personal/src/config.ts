@@ -59,7 +59,6 @@ export const siteConfig: SiteConfig = {
       summary: 'Statically typed programming language & stack-based bytecode virtual machine built from scratch in C++20.',
       tags: ['C++20', 'Compilers', 'Virtual Machine', 'Bytecode', 'CMake', 'Ninja'],
       githubUrl: 'https://github.com/Rowrow620/Framestepp',
-      role: 'Creator & Lead Developer',
       stats: [
         { label: 'Automated Tests', value: '122 Passing' },
         { label: 'Standard', value: 'C++20' },
@@ -97,7 +96,6 @@ frameout(damage(35, true)); // Outputs: 70`
       summary: 'Durable multi-tenant distributed compute service coordinating CPU and CUDA GPU workloads across Go and C++20 workers.',
       tags: ['Go', 'C++20', 'CUDA', 'PostgreSQL', 'Distributed Systems', 'MinIO / S3', 'Docker'],
       githubUrl: 'https://github.com/Rowrow620/AnvilMesh',
-      role: 'Architect & Lead Systems Developer',
       stats: [
         { label: 'GPU Speedup', value: '20.47× @ 4K' },
         { label: 'State Model', value: 'PostgreSQL Leases' },
@@ -139,7 +137,6 @@ frameout(damage(35, true)); // Outputs: 70`
       summary: 'High-performance C++ tracing system with wait-free shared memory IPC queue and fast Rust CLI analysis.',
       tags: ['C++20', 'Rust', 'Shared Memory IPC', 'Lock-Free', 'Perfetto Export', 'Windows API'],
       githubUrl: 'https://github.com/Rowrow620/TraceForge',
-      role: 'Lead Systems Developer',
       stats: [
         { label: 'IPC Model', value: 'Wait-Free Ring' },
         { label: 'Timeline Export', value: 'Perfetto / Chrome' },
@@ -264,7 +261,6 @@ int main() {
       summary: 'C++20 dependency-aware native task runner with strict TOML schema validation and deterministic execution plans.',
       tags: ['C++20', 'Build Systems', 'DAG Graph', 'TOML', 'CLI', 'Native GUI'],
       githubUrl: 'https://github.com/Rowrow620/forge',
-      role: 'Lead Developer',
       stats: [
         { label: 'Standard', value: 'C++20' },
         { label: 'Configuration', value: 'forge.toml' },
@@ -289,7 +285,6 @@ int main() {
       summary: 'A Harmony-based mod for Lobotomy Corporation that gives you unlimited LOB points (used to purchase agents) and infinite agent hiring slots in-game.',
       tags: ['C#', '.NET', 'Harmony Hooks', 'Game Modding', 'Lobotomy Corp'],
       githubUrl: 'https://github.com/Rowrow620/UnlimitedLOBPointsAndAgents',
-      role: 'Mod Author',
       stats: [
         { label: 'Platform', value: 'NexusMods' },
         { label: 'Framework', value: 'Harmony Hooks' }
@@ -313,7 +308,6 @@ int main() {
       summary: 'Harmony-based runtime speed multiplier mod for Lobotomy Corporation unlocking customizable 4x, 8x, and 16x game loops.',
       tags: ['C#', '.NET', 'Harmony Hooks', 'Unity Engine', 'Game Modding', 'Tutorials'],
       githubUrl: 'https://github.com/Rowrow620/FastForwardSpeed',
-      role: 'Mod Author & Educator',
       stats: [
         { label: 'Platform', value: 'NexusMods' },
         { label: 'Multipliers', value: 'Up to 16x' },
@@ -355,7 +349,6 @@ int main() {
       summary: 'A save editor tool for Kingdom Hearts modifying keyblade data.',
       tags: ['Game Modding', 'Save Editor', 'Kingdom Hearts', 'Tool'],
       githubUrl: 'https://github.com/Rowrow620/kh-save-editor-keyblade',
-      role: 'Developer',
       stats: [
         { label: 'Platform', value: 'GitHub' }
       ],
@@ -367,6 +360,8 @@ int main() {
       id: 'art-portfolio',
       title: 'Art Portfolio Monorepo',
       category: 'web',
+      image: '/images/art-portfolio.jpg',
+      imageAlt: 'Screenshot of the Art Portfolio website',
       showOnHome: true,
       size: 'medium',
       gradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
@@ -374,6 +369,7 @@ int main() {
       summary: 'A scalable, responsive art portfolio built for a freelance client using React, TypeScript, and a monorepo architecture.',
       tags: ['React', 'TypeScript', 'Vite', 'Monorepo', 'CSS Modules'],
       githubUrl: 'https://github.com/ssuhshinji/art-portfolio',
+      liveUrl: 'https://ssuhshinji.github.io/art-portfolio/',
       role: 'Lead Developer & Architect',
       stats: [
         { label: 'Architecture', value: 'Monorepo' },

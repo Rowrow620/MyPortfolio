@@ -8,9 +8,9 @@ export const HomePage: React.FC = () => {
   return (
     <ProjectCollection
       projects={featuredProjects}
-      title="Selected work"
-      intro="Languages, systems, and tools — built from the ground up."
-      headingId="selected-work-heading"
+      title=""
+      intro=""
+      headingId="featured-projects-heading"
     />
   );
 };
