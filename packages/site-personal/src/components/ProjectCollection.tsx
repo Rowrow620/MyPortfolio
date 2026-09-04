@@ -13,7 +13,8 @@ const categoryLabels: Record<string, string> = {
   systems: 'Systems & infrastructure',
   tools: 'Tools & visualizers',
   mods: 'Game mods',
-  'file-editors': 'File editing tool'
+  'file-editors': 'File editing tool',
+  web: 'Web development'
 };
 
 const CollectionCard: React.FC<{ project: ProjectData; index: number }> = ({ project, index }) => {

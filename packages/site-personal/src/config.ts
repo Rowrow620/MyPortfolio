@@ -37,6 +37,13 @@ export const siteConfig: SiteConfig = {
         { label: 'KH Save Editor - Keyblade', path: '/project/kh-save-editor-keyblade' }
       ]
     },
+    {
+      label: 'Web Development',
+      path: '/category/web',
+      children: [
+        { label: 'Art Portfolio Monorepo', path: '/project/art-portfolio' }
+      ]
+    },
     { label: 'About & Skills', path: '/about' },
     { label: 'Contact', path: '/contact' }
   ],
@@ -354,6 +361,28 @@ int main() {
       ],
       highlights: [
         'Allows Kingdom Hearts players to modify save game keyblade progression.'
+      ]
+    },
+    {
+      id: 'art-portfolio',
+      title: 'Art Portfolio Monorepo',
+      category: 'web',
+      showOnHome: true,
+      size: 'medium',
+      gradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
+      path: '/project/art-portfolio',
+      summary: 'A scalable, responsive art portfolio built for a freelance client using React, TypeScript, and a monorepo architecture.',
+      tags: ['React', 'TypeScript', 'Vite', 'Monorepo', 'CSS Modules'],
+      githubUrl: 'https://github.com/ssuhshinji/art-portfolio',
+      role: 'Lead Developer & Architect',
+      stats: [
+        { label: 'Architecture', value: 'Monorepo' },
+        { label: 'Framework', value: 'React + Vite' }
+      ],
+      highlights: [
+        'Architected a scalable monorepo workspace to share core UI components across multiple distinct portfolio sites.',
+        'Engineered a highly responsive, masonry-style image grid for optimized artwork viewing across desktop and mobile.',
+        'Implemented strict TypeScript interfaces for content management, allowing the client to easily update their gallery via structured configuration files.'
       ]
     }
   ]

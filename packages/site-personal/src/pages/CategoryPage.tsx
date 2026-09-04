@@ -12,6 +12,10 @@ const categoryDetails: Record<string, { title: string; intro: string }> = {
     title: 'Tools & Visualizers',
     intro: 'Native and browser-based tools for learning, creating, and exploring.'
   },
+  web: {
+    title: 'Web Development',
+    intro: 'Frontend architectures, monorepos, and production web applications.'
+  },
   mods: {
     title: 'Mods & Game Tools',
     intro: 'Runtime extensions, game file editors, and custom game mechanics.'
