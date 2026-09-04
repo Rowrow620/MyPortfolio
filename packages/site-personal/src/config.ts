@@ -278,7 +278,7 @@ int main() {
       size: 'medium',
       gradient: 'linear-gradient(135deg, #240046 0%, #3c096c 50%, #5a189a 100%)',
       path: '/project/unlimited-lob',
-      summary: 'Harmony-based mod for Lobotomy Corporation providing custom agent hiring mechanics and high compatibility hooks.',
+      summary: 'A Harmony-based mod for Lobotomy Corporation that gives you unlimited LOB points (used to purchase agents) and infinite agent hiring slots in-game.',
       tags: ['C#', '.NET', 'Harmony Hooks', 'Game Modding', 'Lobotomy Corp'],
       githubUrl: 'https://github.com/Rowrow620/UnlimitedLOBPointsAndAgents',
       role: 'Mod Author',
@@ -287,8 +287,8 @@ int main() {
         { label: 'Framework', value: 'Harmony Hooks' }
       ],
       highlights: [
-        'Utilizes Harmony execution priority hooks (First/Last) to maintain compatibility with complex mod ecosystems.',
-        'Overrides in-game LOB point limits and daily agent recruitment limits seamlessly during runtime.'
+        'Overrides in-game limits during runtime to provide unlimited LOB points and infinite agent recruitment slots.',
+        'Utilizes Harmony execution priority hooks (First/Last) to maintain compatibility with complex mod ecosystems.'
       ]
     },
     {
