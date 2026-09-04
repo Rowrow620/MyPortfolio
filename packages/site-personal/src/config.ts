@@ -350,17 +350,14 @@ int main() {
       tags: ['Browser Tool', 'Save Editor', 'Data Parsing', 'Game Modding', 'Kingdom Hearts'],
       githubUrl: 'https://github.com/Rowrow620/kh-save-editor-keyblade',
       liveUrl: 'https://rowrow620.github.io/kh-save-editor-keyblade/',
-      status: 'Active Development',
-      statusNote: 'Planned features include verified Birth by Sleep Final Mix editing for Terra, Ventus, and Aqua, expanding safe editable fields without exposing softlock-prone data, and improving slot summaries, backup guidance, and overall interface polish.',
       stats: [
         { label: 'Platform', value: 'Browser' },
         { label: 'Supported Games', value: '3 Titles' }
       ],
       highlights: [
-        'Edit and transfer Steam and Epic Games Store save archives entirely in the browser.',
-        'Synchronize KH1 and KH2 levels with EXP, stats, party progression, and level-earned abilities.',
-        'Edit Munny, farmable items, Re:Chain Moogle Points, and non-story cards.',
-        'Create a new save file without modifying the uploaded original.'
+        'Parses, modifies, and transfers save data for Kingdom Hearts Final Mix, Re:Chain of Memories, and Kingdom Hearts II Final Mix.',
+        'Supports editing character levels, EXP, abilities, Munny, Moogle Points, and farmable inventory completely in the browser.',
+        'Dynamically synchronizes party progression and stats without requiring any server-side validation or backend.'
       ]
     },
     {
