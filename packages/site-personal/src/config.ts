@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
     { label: 'Contact', path: '/contact' }
   ],
   projects: [
-    {
+{
       id: 'framestepp',
       title: 'FrameStep++',
       category: 'systems',
@@ -84,87 +84,10 @@ export const siteConfig: SiteConfig = {
 
 frameout(damage(35, true)); // Outputs: 70`
       }
-    },
-    {
-      id: 'anvilmesh',
-      title: 'AnvilMesh',
-      category: 'systems',
-      size: 'medium',
-      image: 'https://placehold.co/1200x600/1f1c2c/ffffff?text=Add+AnvilMesh+Benchmark+Graph+Here',
-      gradient: 'linear-gradient(135deg, #1f1c2c 0%, #302b63 50%, #0f0c20 100%)',
-      path: '/project/anvilmesh',
-      summary: 'Durable multi-tenant distributed compute service coordinating CPU and CUDA GPU workloads across Go and C++20 workers.',
-      tags: ['Go', 'C++20', 'CUDA', 'PostgreSQL', 'Distributed Systems', 'MinIO / S3', 'Docker'],
-      githubUrl: 'https://github.com/Rowrow620/AnvilMesh',
-      stats: [
-        { label: 'GPU Speedup', value: '20.47× @ 4K' },
-        { label: 'State Model', value: 'PostgreSQL Leases' },
-        { label: 'Worker Stack', value: 'C++20 & CUDA' },
-        { label: 'Chaos Testing', value: '100% Pass' }
-      ],
-      highlights: [
-        'Architected durable distributed compute engine coordinating async job execution across Go coordinators and native C++20/CUDA workers.',
-        'Engineered custom CUDA image processing kernels (Gaussian blur, Sobel, grayscale) delivering 20.47× speedup at 4K UHD vs deterministic CPU reference.',
-        'Implemented lease-based state machine in PostgreSQL with row-level locking (SKIP LOCKED), monotonic tokens, and strict stale zombie worker rejection.',
-        'Built versioned binary TCP wire protocol with length prefixes, CRC32 checksums, and MinIO/S3 content-addressed SHA-256 object storage.'
-      ],
-      architecture: 'Client / CLI -> REST API (:8080) -> PostgreSQL 16+ (ACID Leases) -> Binary TCP Coordinator -> C++20 / CUDA Workers -> MinIO/S3 (SHA-256 Storage).',
-      codeSnippet: {
-        language: 'cpp',
-        filename: 'worker-cpp/kernels/gaussian_blur.cu',
-        code: `__global__ void gaussian_blur_kernel(
-    const uint8_t* __restrict__ input,
-    uint8_t* __restrict__ output,
-    int width, int height, int pitch)
-{
-    int x = blockIdx.x * blockDim.x + threadIdx.x;
-    int y = blockIdx.y * blockDim.y + threadIdx.y;
-    if (x >= width || y >= height) return;
-    
-    // 2D separable Gaussian convolution with shared memory caching
-    apply_separable_filter(input, output, x, y, width, height, pitch);
-}`
-      }
-    },
-    {
-      id: 'traceforge',
-      title: 'TraceForge',
-      category: 'systems',
-      size: 'medium',
-      image: 'https://placehold.co/1200x600/2b0938/ffffff?text=Add+TraceForge+Perfetto+Timeline+Here',
-      gradient: 'linear-gradient(135deg, #2b0938 0%, #511845 50%, #8b263e 100%)',
-      path: '/project/traceforge',
-      summary: 'High-performance C++ tracing system with wait-free shared memory IPC queue and fast Rust CLI analysis.',
-      tags: ['C++20', 'Rust', 'Shared Memory IPC', 'Lock-Free', 'Perfetto Export', 'Windows API'],
-      githubUrl: 'https://github.com/Rowrow620/TraceForge',
-      stats: [
-        { label: 'IPC Model', value: 'Wait-Free Ring' },
-        { label: 'Timeline Export', value: 'Perfetto / Chrome' },
-        { label: 'Core Stack', value: 'C++20 & Rust' }
-      ],
-      highlights: [
-        'Zero-slowdown runtime instrumentation streaming profiling events directly into background daemon via named shared memory IPC.',
-        'Lock-free, wait-free ring buffer for thread-local event capture with configurable drop and backpressure policies.',
-        'Fast Rust CLI analysis parser providing instant category breakdowns and Perfetto timeline exports for Chrome Tracing.'
-      ],
-      architecture: 'C++ Target App (Wait-Free IPC Queue) -> Shared Memory -> Background Daemon (traceforged.exe) -> .tftrace file -> Rust CLI Analyzer / Perfetto Viewer.',
-      codeSnippet: {
-        language: 'cpp',
-        filename: 'examples/main.cpp',
-        code: `#include <traceforge/trace.hpp>
 
-int main() {
-    traceforge::SessionOptions opts;
-    traceforge::Session session(opts);
-    session.set_process_name("game-engine");
-    
-    TF_SCOPE("engine", "frame_update");
-    TF_COUNTER("memory", "allocations", 42);
-    return 0;
-}`
-      }
     },
     {
+
       id: 'algobuddy',
       title: 'AlgoBuddy',
       category: 'tools',
@@ -219,8 +142,10 @@ int main() {
     }
 }`
       }
+
     },
     {
+
       id: 'pixelbuddy',
       title: 'PixelBuddy',
       category: 'tools',
@@ -245,8 +170,10 @@ int main() {
         'Intuitive pixel art creation tool with multi-frame timeline animation management and real-time canvas previews.',
         'Dual deployment model: standalone native desktop app or zero-install browser WebAssembly client.'
       ]
+
     },
     {
+
       id: 'forge',
       title: 'Forge',
       category: 'systems',
@@ -271,8 +198,10 @@ int main() {
         'Deterministic execution planner with native Windows and POSIX process management, live stream forwarding, and fail-fast guarantees.',
         'Native Forge Studio GUI displays dependency graphs, task status, worker activity, and execution logs.'
       ]
+
     },
     {
+
       id: 'unlimited-lob',
       title: 'Unlimited LOB Points & Agents',
       category: 'mods',
@@ -293,8 +222,10 @@ int main() {
         'Overrides in-game limits during runtime to provide unlimited LOB points and infinite agent recruitment slots.',
         'Utilizes Harmony execution priority hooks (First/Last) to maintain compatibility with complex mod ecosystems.'
       ]
+
     },
     {
+
       id: 'fastforwardspeed',
       title: 'FastForwardSpeed',
       category: 'mods',
@@ -359,8 +290,10 @@ int main() {
         'Supports editing character levels, EXP, abilities, Munny, Moogle Points, and farmable inventory completely in the browser.',
         'Dynamically synchronizes party progression and stats without requiring any server-side validation or backend.'
       ]
+
     },
     {
+
       id: 'art-portfolio',
       title: 'Art Portfolio Monorepo',
       category: 'web',
@@ -384,6 +317,89 @@ int main() {
         'Engineered a highly responsive, masonry-style image grid for optimized artwork viewing across desktop and mobile.',
         'Implemented strict TypeScript interfaces for content management, allowing the client to easily update their gallery via structured configuration files.'
       ]
+    },
+    {
+
+      id: 'anvilmesh',
+      title: 'AnvilMesh',
+      category: 'systems',
+      size: 'medium',
+      image: 'https://placehold.co/1200x600/1f1c2c/ffffff?text=Add+AnvilMesh+Benchmark+Graph+Here',
+      gradient: 'linear-gradient(135deg, #1f1c2c 0%, #302b63 50%, #0f0c20 100%)',
+      path: '/project/anvilmesh',
+      summary: 'Durable multi-tenant distributed compute service coordinating CPU and CUDA GPU workloads across Go and C++20 workers.',
+      tags: ['Go', 'C++20', 'CUDA', 'PostgreSQL', 'Distributed Systems', 'MinIO / S3', 'Docker'],
+      githubUrl: 'https://github.com/Rowrow620/AnvilMesh',
+      stats: [
+        { label: 'GPU Speedup', value: '20.47× @ 4K' },
+        { label: 'State Model', value: 'PostgreSQL Leases' },
+        { label: 'Worker Stack', value: 'C++20 & CUDA' },
+        { label: 'Chaos Testing', value: '100% Pass' }
+      ],
+      highlights: [
+        'Architected durable distributed compute engine coordinating async job execution across Go coordinators and native C++20/CUDA workers.',
+        'Engineered custom CUDA image processing kernels (Gaussian blur, Sobel, grayscale) delivering 20.47× speedup at 4K UHD vs deterministic CPU reference.',
+        'Implemented lease-based state machine in PostgreSQL with row-level locking (SKIP LOCKED), monotonic tokens, and strict stale zombie worker rejection.',
+        'Built versioned binary TCP wire protocol with length prefixes, CRC32 checksums, and MinIO/S3 content-addressed SHA-256 object storage.'
+      ],
+      architecture: 'Client / CLI -> REST API (:8080) -> PostgreSQL 16+ (ACID Leases) -> Binary TCP Coordinator -> C++20 / CUDA Workers -> MinIO/S3 (SHA-256 Storage).',
+      codeSnippet: {
+        language: 'cpp',
+        filename: 'worker-cpp/kernels/gaussian_blur.cu',
+        code: `__global__ void gaussian_blur_kernel(
+    const uint8_t* __restrict__ input,
+    uint8_t* __restrict__ output,
+    int width, int height, int pitch)
+{
+    int x = blockIdx.x * blockDim.x + threadIdx.x;
+    int y = blockIdx.y * blockDim.y + threadIdx.y;
+    if (x >= width || y >= height) return;
+    
+    // 2D separable Gaussian convolution with shared memory caching
+    apply_separable_filter(input, output, x, y, width, height, pitch);
+}`
+      }
+
+    },
+    {
+
+      id: 'traceforge',
+      title: 'TraceForge',
+      category: 'systems',
+      size: 'medium',
+      image: 'https://placehold.co/1200x600/2b0938/ffffff?text=Add+TraceForge+Perfetto+Timeline+Here',
+      gradient: 'linear-gradient(135deg, #2b0938 0%, #511845 50%, #8b263e 100%)',
+      path: '/project/traceforge',
+      summary: 'High-performance C++ tracing system with wait-free shared memory IPC queue and fast Rust CLI analysis.',
+      tags: ['C++20', 'Rust', 'Shared Memory IPC', 'Lock-Free', 'Perfetto Export', 'Windows API'],
+      githubUrl: 'https://github.com/Rowrow620/TraceForge',
+      stats: [
+        { label: 'IPC Model', value: 'Wait-Free Ring' },
+        { label: 'Timeline Export', value: 'Perfetto / Chrome' },
+        { label: 'Core Stack', value: 'C++20 & Rust' }
+      ],
+      highlights: [
+        'Zero-slowdown runtime instrumentation streaming profiling events directly into background daemon via named shared memory IPC.',
+        'Lock-free, wait-free ring buffer for thread-local event capture with configurable drop and backpressure policies.',
+        'Fast Rust CLI analysis parser providing instant category breakdowns and Perfetto timeline exports for Chrome Tracing.'
+      ],
+      architecture: 'C++ Target App (Wait-Free IPC Queue) -> Shared Memory -> Background Daemon (traceforged.exe) -> .tftrace file -> Rust CLI Analyzer / Perfetto Viewer.',
+      codeSnippet: {
+        language: 'cpp',
+        filename: 'examples/main.cpp',
+        code: `#include <traceforge/trace.hpp>
+
+int main() {
+    traceforge::SessionOptions opts;
+    traceforge::Session session(opts);
+    session.set_process_name("game-engine");
+    
+    TF_SCOPE("engine", "frame_update");
+    TF_COUNTER("memory", "allocations", 42);
+    return 0;
+}`
+      }
+
     }
   ]
 };
