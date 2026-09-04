@@ -346,14 +346,18 @@ int main() {
       size: 'medium',
       gradient: 'linear-gradient(135deg, #1f005c 0%, #5b0060 50%, #870160 100%)',
       path: '/project/kh-save-editor-keyblade',
-      summary: 'A save editor tool for Kingdom Hearts modifying keyblade data.',
-      tags: ['Game Modding', 'Save Editor', 'Kingdom Hearts', 'Tool'],
+      summary: 'A browser-based save editor and transfer tool for the PC versions of the Kingdom Hearts Final Mix collection.',
+      tags: ['Browser Tool', 'Save Editor', 'Data Parsing', 'Game Modding', 'Kingdom Hearts'],
       githubUrl: 'https://github.com/Rowrow620/kh-save-editor-keyblade',
+      liveUrl: 'https://rowrow620.github.io/kh-save-editor-keyblade/',
       stats: [
-        { label: 'Platform', value: 'GitHub' }
+        { label: 'Platform', value: 'Browser' },
+        { label: 'Supported Games', value: '3 Titles' }
       ],
       highlights: [
-        'Allows Kingdom Hearts players to modify save game keyblade progression.'
+        'Parses, modifies, and transfers save data for Kingdom Hearts Final Mix, Re:Chain of Memories, and Kingdom Hearts II Final Mix.',
+        'Supports editing character levels, EXP, abilities, Munny, Moogle Points, and farmable inventory completely in the browser.',
+        'Dynamically synchronizes party progression and stats without requiring any server-side validation or backend.'
       ]
     },
     {
