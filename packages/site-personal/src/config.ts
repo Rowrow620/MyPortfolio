@@ -325,7 +325,7 @@ frameout(damage(35, true)); // Outputs: 70`
       id: 'personal-portfolio',
       title: 'Personal Developer Portfolio',
       category: 'web',
-      image: 'https://placehold.co/1200x600/1e1e2f/ffffff?text=Portfolio+Screenshot+Here',
+      image: '/images/personal-portfolio.png',
       imageAlt: 'Screenshot of the personal developer portfolio homepage',
       showOnHome: true,
       size: 'medium',
