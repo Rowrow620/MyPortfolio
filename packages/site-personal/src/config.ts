@@ -41,7 +41,8 @@ export const siteConfig: SiteConfig = {
       label: 'Web Development',
       path: '/category/web',
       children: [
-        { label: 'Art Portfolio Monorepo', path: '/project/art-portfolio' }
+        { label: 'Art Portfolio Monorepo', path: '/project/art-portfolio' },
+        { label: 'Personal Developer Portfolio', path: '/project/personal-portfolio' }
       ]
     },
     { label: 'About & Skills', path: '/about' },
@@ -321,7 +322,30 @@ frameout(damage(35, true)); // Outputs: 70`
       ]
     },
     {
-
+      id: 'personal-portfolio',
+      title: 'Personal Developer Portfolio',
+      category: 'web',
+      image: 'https://placehold.co/1200x600/1e1e2f/ffffff?text=Portfolio+Screenshot+Here',
+      imageAlt: 'Screenshot of the personal developer portfolio homepage',
+      showOnHome: true,
+      size: 'medium',
+      gradient: 'linear-gradient(135deg, #1e1e2f 0%, #2a2a40 50%, #3f3f5a 100%)',
+      path: '/project/personal-portfolio',
+      summary: 'This portfolio! A personal developer portfolio showcasing my systems engineering, game modding, and full-stack web projects.',
+      tags: ['React', 'TypeScript', 'Vite', 'CSS Modules', 'React Router'],
+      githubUrl: 'https://github.com/Rowrow620/MyPortfolio',
+      liveUrl: 'https://rowrow620.github.io/MyPortfolio/',
+      stats: [
+        { label: 'Framework', value: 'React + Vite' },
+        { label: 'Styling', value: 'CSS Modules' }
+      ],
+      highlights: [
+        'Developed a dynamic React front-end utilizing a centralized TypeScript configuration for seamless project additions and content updates.',
+        'Designed a sleek, dark-themed UI with custom CSS Modules, fluid responsive layouts, and interactive project masonry grids.',
+        'Configured automated production builds and deployments to GitHub Pages using Vite optimized bundling.'
+      ]
+    },
+    {
       id: 'anvilmesh',
       title: 'AnvilMesh',
       category: 'systems',
