@@ -9,6 +9,13 @@ export interface ProjectData {
   title: string;
   image?: string;
   imageAlt?: string;
+  imageCaption?: string;
+  additionalMedia?: {
+    image: string;
+    imageAlt: string;
+    imageCaption?: string;
+    aspectRatio?: string;
+  }[];
   imagePresentation?: 'banner' | 'demo';
   contentWarning?: string;
   status?: string;

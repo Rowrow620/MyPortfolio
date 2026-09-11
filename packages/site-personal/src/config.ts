@@ -41,6 +41,7 @@ export const siteConfig: SiteConfig = {
       label: 'Web Development',
       path: '/category/web',
       children: [
+        { label: 'WordKupo (Final Fantasy Word Game)', path: '/project/wordkupo' },
         { label: 'Art Portfolio Monorepo', path: '/project/art-portfolio' },
         { label: 'Personal Developer Portfolio', path: '/project/personal-portfolio' }
       ]
@@ -54,12 +55,26 @@ export const siteConfig: SiteConfig = {
       title: 'FrameStep++',
       category: 'systems',
       size: 'hero',
-      image: 'https://raw.githubusercontent.com/Rowrow620/Framestepp/main/assets/framestepp-demo.gif',
+      image: '/images/framestepp.gif',
+      imageAlt: 'FrameStep++ playground demonstrating the Connection program with source editing, compiler controls, expected output, and an animated terminal',
+      imageCaption: 'Demo note: FrameStep++ produces the printed output immediately. The character-by-character transmission is a decorative web-playground effect designed to match the game-inspired interface.',
+      additionalMedia: [
+        {
+          image: '/images/framestepp-code.gif',
+          imageAlt: 'FrameStep++ running directly in a terminal without the web playground',
+          imageCaption: 'Original demo: the FrameStep++ code running directly in the terminal, without the themed playground.',
+          aspectRatio: '720 / 510'
+        }
+      ],
+      imagePresentation: 'demo',
+      aspectRatio: '1147 / 685',
+      objectFit: 'contain',
       gradient: 'linear-gradient(135deg, #1b263b 0%, #2b3a4a 50%, #415a77 100%)',
       path: '/project/framestepp',
       summary: 'Statically typed programming language & stack-based bytecode virtual machine built from scratch in C++20.',
       tags: ['C++20', 'Compilers', 'Virtual Machine', 'Bytecode', 'CMake', 'Ninja'],
       githubUrl: 'https://github.com/Rowrow620/Framestepp',
+      liveUrl: 'https://rowrow620.github.io/Framestepp/',
       stats: [
         { label: 'Automated Tests', value: '122 Passing' },
         { label: 'Standard', value: 'C++20' },
@@ -296,6 +311,38 @@ frameout(damage(35, true)); // Outputs: 70`
 
     },
     {
+      id: 'wordkupo',
+      title: 'WordKupo',
+      category: 'web',
+      image: '/images/wordkupo.png',
+      imageAlt: 'WordKupo Final Fantasy word game showing a six-row daily puzzle grid and on-screen keyboard',
+      imagePresentation: 'demo',
+      aspectRatio: '560 / 750',
+      objectFit: 'contain',
+      showOnHome: false,
+      size: 'medium',
+      status: 'Work in progress',
+      statusNote: 'Classic mode is the more complete experience. Evolved mode is a playable prototype with a mostly fixed battle scenario; areas, encounters, inventory, equipment, and persistent RPG progression are represented but not fully connected yet.',
+      gradient: 'linear-gradient(135deg, #08112d 0%, #19346f 50%, #d6b65f 100%)',
+      path: '/project/wordkupo',
+      summary: 'A Final Fantasy I-inspired word game with a polished daily puzzle mode and an experimental mode that turns each guess into a turn-based RPG battle.',
+      tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Game UI', 'RPG Systems'],
+      stats: [
+        { label: 'Platform', value: 'Browser' },
+        { label: 'Current Focus', value: 'Final Fantasy I' },
+        { label: 'Game Modes', value: 'Classic + Evolved' },
+        { label: 'Daily Puzzle', value: '5 or 6 Letters' },
+        { label: 'Progress', value: 'Saved Locally' }
+      ],
+      highlights: [
+        'Classic mode presents one daily five- or six-letter puzzle with six guesses, color feedback, optional Savage Mode, music, pixel-art visuals, Mogbert dialogue, and animated Final Fantasy presentation.',
+        'Evolved mode transforms the word puzzle into a turn-based battle where a named four-character party uses jobs, spells, HP, MP, defense, and successful guesses to fight enemies and earn experience, Gil, and levels.',
+        'Includes title menus, character naming, party setup, records and streak statistics, local save data, settings, audio controls, multiple visual themes, and clipboard result sharing.',
+        'Designed the project to grow beyond its current Final Fantasy I focus and eventually support vocabulary and content from across the series.'
+      ],
+      architecture: 'React interface -> Classic or Evolved mode flow -> shared word validation and feedback -> mode-specific puzzle or battle state -> localStorage-backed saves, records, statistics, and settings.'
+    },
+    {
 
       id: 'art-portfolio',
       title: 'Art Portfolio Monorepo',
@@ -350,7 +397,13 @@ frameout(damage(35, true)); // Outputs: 70`
       title: 'AnvilMesh',
       category: 'systems',
       size: 'medium',
-      image: 'https://placehold.co/1200x600/1f1c2c/ffffff?text=Add+AnvilMesh+Benchmark+Graph+Here',
+      image: '/images/anvilmesh-studio.png',
+      imageAlt: 'AnvilMesh desktop application showing the compute playground, distributed processing stages, and image-operation controls',
+      imagePresentation: 'demo',
+      aspectRatio: '1245 / 795',
+      objectFit: 'contain',
+      status: 'Work in progress',
+      statusNote: 'The core distributed compute pipeline is functional. Desktop interface polish and additional end-to-end workflow validation are still in progress.',
       gradient: 'linear-gradient(135deg, #1f1c2c 0%, #302b63 50%, #0f0c20 100%)',
       path: '/project/anvilmesh',
       summary: 'Durable multi-tenant distributed compute service coordinating CPU and CUDA GPU workloads across Go and C++20 workers.',
@@ -393,7 +446,11 @@ frameout(damage(35, true)); // Outputs: 70`
       title: 'TraceForge',
       category: 'systems',
       size: 'medium',
-      image: 'https://placehold.co/1200x600/2b0938/ffffff?text=Add+TraceForge+Perfetto+Timeline+Here',
+      image: '/images/traceforge-studio.png',
+      imageAlt: 'TraceForge Studio displaying a multithreaded trace timeline, performance metrics, hotspots, and span inspection',
+      imagePresentation: 'demo',
+      aspectRatio: '16 / 9',
+      objectFit: 'contain',
       gradient: 'linear-gradient(135deg, #2b0938 0%, #511845 50%, #8b263e 100%)',
       path: '/project/traceforge',
       summary: 'High-performance C++ tracing system with wait-free shared memory IPC queue and fast Rust CLI analysis.',

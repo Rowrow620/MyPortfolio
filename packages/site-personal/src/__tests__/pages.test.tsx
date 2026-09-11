@@ -31,23 +31,25 @@ describe('Personal Portfolio Page Regression Tests', () => {
       });
     });
 
-    it('replaces placeholder images with labeled project overviews while retaining actual recordings', () => {
+    it('uses real application captures instead of placeholder images', () => {
       render(
         <MemoryRouter>
           <HomePage />
         </MemoryRouter>
       );
 
-      ['AnvilMesh', 'TraceForge'].forEach((title) => {
-        const card = screen.getByRole('link', { name: title });
-        expect(within(card).queryByRole('img')).not.toBeInTheDocument();
-        expect(within(card).getByText('Project overview')).toBeVisible();
-      });
-      expect(screen.getAllByRole('img')).toHaveLength(4);
+      const anvilMeshCard = screen.getByRole('link', { name: 'AnvilMesh' });
+      expect(within(anvilMeshCard).getByRole('img', { name: /AnvilMesh desktop application/i }))
+        .toHaveAttribute('src', '/images/anvilmesh-studio.png');
+      expect(within(anvilMeshCard).getByText('Work in progress')).toBeVisible();
+
+      const traceForgeCard = screen.getByRole('link', { name: 'TraceForge' });
+      expect(within(traceForgeCard).getByRole('img', { name: /TraceForge Studio displaying/i }))
+        .toHaveAttribute('src', '/images/traceforge-studio.png');
       screen.getAllByRole('img').forEach((image) => {
         expect(image.getAttribute('src')).not.toContain('placehold.co');
       });
-      expect(screen.getByRole('img', { name: 'FrameStep++ application demo' }))
+      expect(screen.getByRole('img', { name: /FrameStep\+\+ playground demonstrating/i }))
         .toHaveAttribute('loading', 'eager');
       expect(screen.getByRole('img', { name: /Forge Studio demonstrating/i }))
         .toHaveAttribute('loading', 'lazy');
@@ -93,11 +95,27 @@ describe('Personal Portfolio Page Regression Tests', () => {
       );
 
       const projectPaths = screen.getAllByRole('link').map((link) => link.getAttribute('href'));
-      expect(projectPaths).toEqual(
-        siteConfig.projects.filter((project) => project.category !== 'mods').map((project) => project.path)
-      );
+      expect(projectPaths).toEqual([
+        ...siteConfig.projects.filter((project) => project.showOnHome !== false).map((project) => project.path),
+        '/category/mods'
+      ]);
       expect(screen.queryByText(/Unlimited LOB Points & Agents/i)).not.toBeInTheDocument();
       expect(screen.queryByText(/FastForwardSpeed/i)).not.toBeInTheDocument();
+    });
+
+    it('features game tooling as one collection instead of individual mod cards', () => {
+      render(
+        <MemoryRouter>
+          <HomePage />
+        </MemoryRouter>
+      );
+
+      const collection = screen.getByRole('link', { name: /Game Tools & Modding/i });
+      expect(collection).toHaveAttribute('href', '/category/mods');
+      expect(within(collection).getByRole('img', { name: /Kingdom Hearts save editor interface/i }))
+        .toHaveAttribute('src', '/images/kh-save-editor.png');
+      expect(screen.queryByRole('link', { name: /Unlimited LOB Points & Agents/i })).not.toBeInTheDocument();
+      expect(screen.queryByRole('link', { name: /FastForwardSpeed/i })).not.toBeInTheDocument();
     });
 
     it('renders project showcase and flagship project', () => {
@@ -239,8 +257,14 @@ describe('Personal Portfolio Page Regression Tests', () => {
         </MemoryRouter>
       );
       expect(screen.getByRole('heading', { level: 1, name: 'FrameStep++' })).toBeInTheDocument();
+      expect(screen.getByText(/produces the printed output immediately/i)).toBeVisible();
+      expect(screen.getByRole('img', { name: /running directly in a terminal without the web playground/i }))
+        .toHaveAttribute('src', '/images/framestepp-code.gif');
+      expect(screen.getByText(/code running directly in the terminal, without the themed playground/i)).toBeVisible();
       expect(screen.getByText(/122 Passing/i)).toBeInTheDocument();
       expect(screen.getByRole('heading', { level: 2, name: 'Highlights' })).toBeInTheDocument();
+      expect(screen.getByRole('link', { name: /Live Demo/i }))
+        .toHaveAttribute('href', 'https://rowrow620.github.io/Framestepp/');
       expect(screen.getByText(/GitHub Repo ↗/i)).toBeInTheDocument();
       expect(screen.queryByRole('heading', { name: 'Ownership & Open Source' })).not.toBeInTheDocument();
     });
@@ -286,6 +310,22 @@ describe('Personal Portfolio Page Regression Tests', () => {
   });
 
   describe('CategoryPage', () => {
+    it('shows WordKupo in Web Development with its current scope', () => {
+      render(
+        <MemoryRouter initialEntries={['/category/web']}>
+          <Routes>
+            <Route path="/category/:slug" element={<CategoryPage />} />
+          </Routes>
+        </MemoryRouter>
+      );
+
+      const card = screen.getByRole('link', { name: 'WordKupo' });
+      expect(card).toHaveAttribute('href', '/project/wordkupo');
+      expect(within(card).getByRole('img', { name: /WordKupo Final Fantasy word game/i }))
+        .toHaveAttribute('src', '/images/wordkupo.png');
+      expect(within(card).getByText(/Final Fantasy I-inspired word game/i)).toBeVisible();
+    });
+
     it('keeps both mod projects available in the Mods section', () => {
       render(
         <MemoryRouter initialEntries={['/category/mods']}>

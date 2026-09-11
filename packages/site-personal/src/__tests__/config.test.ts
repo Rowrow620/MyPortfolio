@@ -49,7 +49,7 @@ describe('siteConfig Regression Tests', () => {
 
       // Links
       const hasUrl = Boolean(proj.githubUrl || proj.liveUrl);
-      expect(hasUrl).toBe(true);
+      expect(hasUrl || proj.status === 'Work in progress').toBe(true);
 
       // Highlights
       if (proj.highlights) {
@@ -76,6 +76,48 @@ describe('siteConfig Regression Tests', () => {
     expect(ids).toContain('forge');
     expect(ids).toContain('unlimited-lob');
     expect(ids).toContain('fastforwardspeed');
+  });
+
+  it('uses the finalized FrameStep++ playground recording', () => {
+    const framestepp = siteConfig.projects.find((project) => project.id === 'framestepp');
+    expect(framestepp?.image).toBe('/images/framestepp.gif');
+    expect(framestepp?.imagePresentation).toBe('demo');
+    expect(framestepp?.imageAlt).toContain('FrameStep++ playground');
+    expect(framestepp?.liveUrl).toBe('https://rowrow620.github.io/Framestepp/');
+    expect(framestepp?.additionalMedia).toContainEqual({
+      image: '/images/framestepp-code.gif',
+      imageAlt: 'FrameStep++ running directly in a terminal without the web playground',
+      imageCaption: 'Original demo: the FrameStep++ code running directly in the terminal, without the themed playground.',
+      aspectRatio: '720 / 510'
+    });
+  });
+
+  it('lists WordKupo in Web Development without adding it to the homepage', () => {
+    const wordkupo = siteConfig.projects.find((project) => project.id === 'wordkupo');
+    expect(wordkupo?.category).toBe('web');
+    expect(wordkupo?.image).toBe('/images/wordkupo.png');
+    expect(wordkupo?.showOnHome).toBe(false);
+    expect(wordkupo?.summary).toContain('Final Fantasy I');
+    expect(wordkupo?.statusNote).toContain('Evolved mode is a playable prototype');
+    expect(wordkupo?.stats).toContainEqual({ label: 'Game Modes', value: 'Classic + Evolved' });
+
+    const webNav = siteConfig.navItems.find((item) => item.path === '/category/web');
+    expect(webNav?.children?.map((item) => item.path)).toContain('/project/wordkupo');
+  });
+
+  it('uses the AnvilMesh application capture and communicates its development status', () => {
+    const anvilmesh = siteConfig.projects.find((project) => project.id === 'anvilmesh');
+    expect(anvilmesh?.image).toBe('/images/anvilmesh-studio.png');
+    expect(anvilmesh?.imagePresentation).toBe('demo');
+    expect(anvilmesh?.status).toBe('Work in progress');
+    expect(anvilmesh?.statusNote).toContain('core distributed compute pipeline is functional');
+  });
+
+  it('uses the finalized TraceForge Studio capture', () => {
+    const traceforge = siteConfig.projects.find((project) => project.id === 'traceforge');
+    expect(traceforge?.image).toBe('/images/traceforge-studio.png');
+    expect(traceforge?.imagePresentation).toBe('demo');
+    expect(traceforge?.imageAlt).toContain('TraceForge Studio');
   });
 
   it('uses the local AlgoBuddy GIF and accurately labels its development status', () => {

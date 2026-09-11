@@ -92,8 +92,20 @@ export const ProjectDetailPage: React.FC = () => {
             alt={project.imageAlt || `${project.title} preview`}
             style={{ aspectRatio: project.aspectRatio }}
           />
+          {project.imageCaption && <figcaption>{project.imageCaption}</figcaption>}
         </figure>
       )}
+
+      {project.additionalMedia?.map((media) => (
+        <figure className={styles.demoMedia} key={media.image}>
+          <img
+            src={media.image.startsWith('/') ? `${import.meta.env.BASE_URL}${media.image.slice(1)}` : media.image}
+            alt={media.imageAlt}
+            style={{ aspectRatio: media.aspectRatio }}
+          />
+          {media.imageCaption && <figcaption>{media.imageCaption}</figcaption>}
+        </figure>
+      ))}
 
       {/* Metrics / Stats Grid */}
       {project.stats && project.stats.length > 0 && (
