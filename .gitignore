@@ -1,4 +1,18 @@
 node_modules/
 dist/
+.vite/
 .DS_Store
 .env
+
+# Utility / one-off scripts
+*.py
+*.md
+
+# Root-level helper scripts (not part of the portfolio)
+/add_urls.js
+/reorder.js
+/draft_web.py
+/fix_roles.py
+
+# Resume source (not needed for the site)
+resume.tex
