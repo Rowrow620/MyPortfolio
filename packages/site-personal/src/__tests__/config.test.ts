@@ -49,7 +49,7 @@ describe('siteConfig Regression Tests', () => {
 
       // Links
       const hasUrl = Boolean(proj.githubUrl || proj.liveUrl);
-      expect(hasUrl || proj.status === 'Work in progress').toBe(true);
+      expect(hasUrl || proj.status === 'Work in progress' || proj.status === 'Active Development').toBe(true);
 
       // Highlights
       if (proj.highlights) {
@@ -97,8 +97,8 @@ describe('siteConfig Regression Tests', () => {
     expect(wordkupo?.category).toBe('web');
     expect(wordkupo?.image).toBe('/images/wordkupo.png');
     expect(wordkupo?.showOnHome).toBe(false);
-    expect(wordkupo?.summary).toContain('Final Fantasy I');
-    expect(wordkupo?.statusNote).toContain('Evolved mode is a playable prototype');
+    expect(wordkupo?.summary).toContain('Final Fantasy');
+    expect(wordkupo?.statusNote).toContain('Classic mode is fully playable');
     expect(wordkupo?.stats).toContainEqual({ label: 'Game Modes', value: 'Classic + Evolved' });
 
     const webNav = siteConfig.navItems.find((item) => item.path === '/category/web');
@@ -131,7 +131,7 @@ describe('siteConfig Regression Tests', () => {
   });
 
   it('keeps mods in the catalog and navigation but opts them out of the homepage', () => {
-    const mods = siteConfig.projects.filter((project) => project.category === 'mods');
+    const mods = siteConfig.projects.filter((project) => project.category === 'mods' || project.category === 'file-editors');
     expect(mods.length).toBeGreaterThan(0);
     mods.forEach((project) => expect(project.showOnHome).toBe(false));
 

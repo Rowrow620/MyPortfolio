@@ -323,7 +323,7 @@ describe('Personal Portfolio Page Regression Tests', () => {
       expect(card).toHaveAttribute('href', '/project/wordkupo');
       expect(within(card).getByRole('img', { name: /WordKupo Final Fantasy word game/i }))
         .toHaveAttribute('src', '/images/wordkupo.png');
-      expect(within(card).getByText(/Final Fantasy I-inspired word game/i)).toBeVisible();
+      expect(within(card).getByText(/Final Fantasy-inspired word game/i)).toBeVisible();
     });
 
     it('keeps both mod projects available in the Mods section', () => {

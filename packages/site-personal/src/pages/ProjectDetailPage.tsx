@@ -171,7 +171,11 @@ export const ProjectDetailPage: React.FC = () => {
       {project.architecture && (
         <section className={styles.contentSection}>
           <h2 className={styles.sectionHeading}>System Architecture</h2>
-          <p className={styles.summaryText}>{project.architecture}</p>
+          {project.architecture.includes('\n') ? (
+            <pre className={styles.architecturePre}>{project.architecture}</pre>
+          ) : (
+            <p className={styles.summaryText}>{project.architecture}</p>
+          )}
         </section>
       )}
 

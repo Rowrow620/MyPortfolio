@@ -321,26 +321,39 @@ frameout(damage(35, true)); // Outputs: 70`
       objectFit: 'contain',
       showOnHome: false,
       size: 'medium',
-      status: 'Work in progress',
-      statusNote: 'Classic mode is the more complete experience. Evolved mode is a playable prototype with a mostly fixed battle scenario; areas, encounters, inventory, equipment, and persistent RPG progression are represented but not fully connected yet.',
+      status: 'Active Development',
+      statusNote: 'Classic mode is fully playable with daily seeded puzzles, lore hints, and streak tracking. Evolved mode is a fully playable turn-based RPG battle encounter that connects Wordle guess accuracy to combat formulas, party stats, and enemy AI, with persistent multi-area progression in development.',
       gradient: 'linear-gradient(135deg, #08112d 0%, #19346f 50%, #d6b65f 100%)',
       path: '/project/wordkupo',
-      summary: 'A Final Fantasy I-inspired word game with a polished daily puzzle mode and an experimental mode that turns each guess into a turn-based RPG battle.',
+      summary: 'A retro Final Fantasy-inspired word game built with React and TypeScript that combines a polished daily word puzzle with an authentic 16-bit turn-based battle engine where word-guessing mechanics directly drive RPG combat.',
       tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Game UI', 'RPG Systems'],
       stats: [
-        { label: 'Platform', value: 'Browser' },
-        { label: 'Current Focus', value: 'Final Fantasy I' },
+        { label: 'Platform', value: 'Browser (Desktop & Mobile)' },
+        { label: 'Visual Inspiration', value: 'FF1 (GBA) & NES Classics' },
         { label: 'Game Modes', value: 'Classic + Evolved' },
-        { label: 'Daily Puzzle', value: '5 or 6 Letters' },
-        { label: 'Progress', value: 'Saved Locally' }
+        { label: 'Puzzle Length', value: '5 or 6 Letters (Daily Seeded)' },
+        { label: 'Save State', value: 'LocalStorage' }
       ],
       highlights: [
-        'Classic mode presents one daily five- or six-letter puzzle with six guesses, color feedback, optional Savage Mode, music, pixel-art visuals, Mogbert dialogue, and animated Final Fantasy presentation.',
-        'Evolved mode transforms the word puzzle into a turn-based battle where a named four-character party uses jobs, spells, HP, MP, defense, and successful guesses to fight enemies and earn experience, Gil, and levels.',
-        'Includes title menus, character naming, party setup, records and streak statistics, local save data, settings, audio controls, multiple visual themes, and clipboard result sharing.',
-        'Designed the project to grow beyond its current Final Fantasy I focus and eventually support vocabulary and content from across the series.'
+        'Classic Mode (Daily Puzzle): Daily 5- or 6-letter seeded puzzle with 6 attempts, color-coded feedback (correct/present/absent), thematic Final Fantasy vocabulary, win-streak tracking, guess distribution charts, and retro clipboard sharing.',
+        'Mogbert the Moogle: Animated companion featuring typewriter dialogue, sound blips, reactive banter, and an optional Savage Mode for purists who prefer solving without hints.',
+        'Evolved Mode (RPG Combat Integration): Replaces the puzzle grid with an authentic Final Fantasy I GBA-style battle encounter with custom 4-character party creation across classic jobs (Warrior, Thief, Monk, Red Mage, White Mage, Black Mage).',
+        'Combat-Linked Word Mechanics: Guesses act as party attack rounds where greens and yellows boost damage output, solving triggers critical strikes, and missed letters expose heroes to enemy counterattacks.',
+        'Interactive Battle Command Window: Full combat actions featuring Attack, Magic (job-specific spells like Cure, Fire, and Thunder with MP pools), Defend (damage halving), and Items, calibrated to exact GBA dual-window HUD proportions.',
+        '2.5D Battle Formation Engine: Implemented a feet-anchored coordinate system (translate(-50%, -100%)) across a 3:2 aspect-ratio frame, ensuring varying sprite dimensions remain grounded on the terrain plane without floating.',
+        'Pixel-Perfect Typography & Upscaling: Custom TrueType font (FinalFantasy1.ttf) rendered with disabled font-smoothing and unbolded 1-pixel outlines, alongside 70+ battlefield environments and sprites upscaled 4× using nearest-neighbor scaling.',
+        'Dynamic Audio & Theme Engine: Theme music tracks (Title, Town, and Battle), retro sound effects (cursor navigation, spell audio, victory fanfares, error buzzers), and 3 distinct visual themes (Classic FF Blue, Midnight Indigo, and Authentic NES/GBA border styling).'
       ],
-      architecture: 'React interface -> Classic or Evolved mode flow -> shared word validation and feedback -> mode-specific puzzle or battle state -> localStorage-backed saves, records, statistics, and settings.'
+      architecture: `React / Vite UI Layer
+  ├── Title Menu & Party Naming Flow (Job selection & stat baselines)
+  ├── Dual Game Modes:
+  │    ├── Classic Mode: Board state → Mogbert dialogue engine → Streak/Record store
+  │    └── Evolved Mode: Wordle letter evaluation → Damage & Spell calculation engine →
+  │                      2.5D Battle Arena + Enemy AI Turn Loop
+  ├── Shared Core:
+  │    ├── Dictionary validator & daily word generator (seeded by calendar date)
+  │    └── Audio synthesizer & SFX manager
+  └── Persistence Layer (LocalStorage): Game progress, party composition, audio settings, and records`
     },
     {
 
