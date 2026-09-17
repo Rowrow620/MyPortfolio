@@ -107,18 +107,6 @@ export const ProjectDetailPage: React.FC = () => {
         </figure>
       ))}
 
-      {/* Metrics / Stats Grid */}
-      {project.stats && project.stats.length > 0 && (
-        <div className={styles.statsGrid}>
-          {project.stats.map((stat, i) => (
-            <div key={i} className={styles.statCard}>
-              <div className={styles.statValue}>{stat.value}</div>
-              <div className={styles.statLabel}>{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      )}
-
       {/* Overview */}
       <section className={styles.contentSection}>
         <h2 className={styles.sectionHeading}>Project Overview</h2>
