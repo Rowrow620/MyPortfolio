@@ -211,6 +211,17 @@ frameout(damage(35, true)); // Outputs: 70`
       summary: 'A Windows system tray application built in Rust that bridges host webcam video into WSL2 over local HTTP and V4L2 loopback. Helps solve hardware forwarding limits on PCIe/MIPI cameras.',
       tags: ['Rust', 'WSL2', 'Windows Media Foundation', 'V4L2', 'MJPEG', 'OpenCV'],
       githubUrl: 'https://github.com/Rowrow620/wsl-cam-bridge',
+      openSource: {
+        summary: 'wsl-cam-bridge is an open-source project released under the GNU General Public License v3.0.',
+        practices: [
+          'Source code, release binaries, and setup scripts are fully documented and hosted on GitHub.',
+          'Includes setup scripts for automated Linux v4l2loopback virtual device creation in WSL2.'
+        ],
+        links: [
+          { label: 'GitHub Repository', url: 'https://github.com/Rowrow620/wsl-cam-bridge' },
+          { label: 'GPLv3 License', url: 'https://github.com/Rowrow620/wsl-cam-bridge/blob/main/LICENSE' }
+        ]
+      },
       stats: [
         { label: 'Language', value: 'Rust 2024' },
         { label: 'Capture API', value: 'Media Foundation' },
