@@ -25,7 +25,8 @@ export const siteConfig: SiteConfig = {
       path: '/category/tools',
       children: [
         { label: 'AlgoBuddy (NeetCode 150 Visualizer)', path: '/project/algobuddy' },
-        { label: 'PixelBuddy (Pixel Art Editor)', path: '/project/pixelbuddy' }
+        { label: 'PixelBuddy (Pixel Art Editor)', path: '/project/pixelbuddy' },
+        { label: 'wsl-cam-bridge (Webcam Bridge)', path: '/project/wsl-cam-bridge' }
       ]
     },
     {
@@ -187,6 +188,41 @@ frameout(damage(35, true)); // Outputs: 70`
         'Dual deployment model: standalone native desktop app or zero-install browser WebAssembly client.'
       ]
 
+        },
+    {
+      id: 'wsl-cam-bridge',
+      title: 'wsl-cam-bridge',
+      category: 'tools',
+      size: 'medium',
+      image: '/images/wsl-cam-bridge-dashboard.png',
+      imageAlt: 'wsl-cam-bridge browser dashboard showing webcam stream and device controls',
+      imagePresentation: 'demo',
+      aspectRatio: '1024 / 801',
+      objectFit: 'contain',
+      additionalMedia: [
+        {
+          image: '/images/wsl-cam-bridge-tray.png',
+          imageAlt: 'wsl-cam-bridge Windows system tray context menu with camera and resolution selection',
+          aspectRatio: '602 / 207'
+        }
+      ],
+      gradient: 'linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%)',
+      path: '/project/wsl-cam-bridge',
+      summary: 'A Windows system tray application built in Rust that bridges host webcam video into WSL2 over local HTTP and V4L2 loopback. Helps solve hardware forwarding limits on PCIe/MIPI cameras.',
+      tags: ['Rust', 'WSL2', 'Windows Media Foundation', 'V4L2', 'MJPEG', 'OpenCV'],
+      githubUrl: 'https://github.com/Rowrow620/wsl-cam-bridge',
+      stats: [
+        { label: 'Language', value: 'Rust 2024' },
+        { label: 'Capture API', value: 'Media Foundation' },
+        { label: 'Target', value: 'WSL2 / Linux' },
+        { label: 'Protocol', value: 'MJPEG / HTTP' }
+      ],
+      highlights: [
+        'Captures video on the Windows host using Windows Media Foundation and streams it as MJPEG over local HTTP at localhost:8080.',
+        'Bypasses usbipd-win limitations for integrated laptop webcams operating over PCIe or MIPI buses where USB forwarding is unsupported.',
+        'Supports direct stream reading in WSL2 via OpenCV or mapping to a virtual /dev/video0 device using v4l2loopback.',
+        'Features a native Windows system tray menu for switching cameras, changing resolutions, and pausing streams.'
+      ]
     },
     {
 
