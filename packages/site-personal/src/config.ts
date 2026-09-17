@@ -35,7 +35,9 @@ export const siteConfig: SiteConfig = {
       children: [
         { label: 'Unlimited LOB Points & Agents', path: '/project/unlimited-lob' },
         { label: 'FastForwardSpeed (Game Multipliers)', path: '/project/fastforwardspeed' },
-        { label: 'KH Save Editor - Keyblade', path: '/project/kh-save-editor-keyblade' }
+        { label: 'KH Save Editor - Keyblade', path: '/project/kh-save-editor-keyblade' },
+        { label: 'EzSlides (In-Game Slide Viewer)', path: '/project/ezslides' },
+        { label: 'XIVLibra (FFXIV Combat Meter)', path: '/project/xivlibra' }
       ]
     },
     {
@@ -356,6 +358,46 @@ frameout(damage(35, true)); // Outputs: 70`
         'Dynamically synchronizes party progression and stats without requiring any server-side validation or backend.'
       ]
 
+    },
+    {
+      id: 'ezslides',
+      title: 'EzSlides',
+      category: 'mods',
+      image: 'https://placehold.co/1200x600/181824/ffffff?text=EzSlides+In-Game+Viewer',
+      imageAlt: 'EzSlides in-game FFXIV slide and raid diagram viewer interface',
+      showOnHome: false,
+      size: 'medium',
+      gradient: 'linear-gradient(135deg, #181824 0%, #2a2a3c 50%, #3e3e54 100%)',
+      path: '/project/ezslides',
+      summary: 'An in-game image and slide viewer for Final Fantasy XIV built for Dalamud, enabling raiders to load local strategy diagrams and navigate slides without alt-tabbing.',
+      tags: ['C#', '.NET', 'Dalamud', 'FFXIV', 'ImGui', 'Game UI'],
+      githubUrl: 'https://github.com/Rowrow620/ezSlidesXIV',
+      highlights: [
+        'Built for the Dalamud plugin framework using C# and ImGui to render strategy images and raid diagrams directly inside the game client.',
+        'Enables raiders to view strat slides in-game without requiring secondary monitors or disruptive alt-tabbing during high-difficulty encounters.',
+        'Features forward and backward slide navigation via on-screen controls, configurable keyboard shortcuts, slide index jumping, and auto-looping.',
+        'Includes borderless presentation, collapse-to-tab functionality to maximize screen space, and local folder auto-detection.'
+      ]
+    },
+    {
+      id: 'xivlibra',
+      title: 'XIVLibra',
+      category: 'mods',
+      image: 'https://placehold.co/1200x600/121826/ffffff?text=XIVLibra+Combat+Meter',
+      imageAlt: 'XIVLibra real-time combat and DPS meter overlay for Final Fantasy XIV',
+      showOnHome: false,
+      size: 'medium',
+      gradient: 'linear-gradient(135deg, #121826 0%, #1e293b 50%, #334155 100%)',
+      path: '/project/xivlibra',
+      summary: 'A real-time combat and DPS meter for Final Fantasy XIV built for Dalamud, featuring direct action effect network hooking, party role filtering, and FFLogs export.',
+      tags: ['C#', '.NET', 'Dalamud', 'FFXIV', 'FFXIVClientStructs', 'Memory Hooking', 'ImGui'],
+      githubUrl: 'https://github.com/Rowrow620/XIVLibra',
+      highlights: [
+        'Intercepts network combat packets at runtime by hooking into ActionEffectHandler::Receive via IGameInteropProvider and FFXIVClientStructs.',
+        'Tracks and calculates real-time damage dealt, healing done, and damage taken across players with pet and clone damage attribution.',
+        'Provides an interactive ImGui overlay with role filtering (All, Party, Tanks, Healers, DPS), collapsible solo view, and custom background opacity.',
+        'Maintains full encounter session history with boss-pull dropdowns and export capabilities to CSV, JSON, and FFLogs-ready log formats.'
+      ]
     },
     {
       id: 'wordkupo',
