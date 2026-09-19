@@ -74,7 +74,7 @@ export const siteConfig: SiteConfig = {
       objectFit: 'contain',
       gradient: 'linear-gradient(135deg, #1b263b 0%, #2b3a4a 50%, #415a77 100%)',
       path: '/project/framestepp',
-      summary: 'Statically typed programming language & stack-based bytecode virtual machine built from scratch in C++20.',
+      summary: 'Statically typed programming language and stack-based bytecode virtual machine implemented in C++20.',
       tags: ['C++20', 'Compilers', 'Virtual Machine', 'Bytecode', 'CMake', 'Ninja'],
       githubUrl: 'https://github.com/Rowrow620/Framestepp',
       liveUrl: 'https://rowrow620.github.io/Framestepp/',
@@ -85,9 +85,9 @@ export const siteConfig: SiteConfig = {
         { label: 'Sanitizers', value: 'ASan & UBSan' }
       ],
       highlights: [
-        'Built full compiler pipeline from scratch: Lexer, recursive-descent Parser, Type Checker, and Bytecode Compiler.',
-        'Engineered custom stack-based Bytecode Virtual Machine with a verified bytecode runtime and diagnostics system.',
-        'Maintained rigorous test suite of 122 automated tests verified across MSVC, GCC, Clang, AddressSanitizer, and UBSan.'
+        'Compiler pipeline comprising a Lexer, recursive-descent Parser, Type Checker, and Bytecode Compiler.',
+        'Stack-based Bytecode Virtual Machine with a bytecode verifier, runtime execution engine, and diagnostics system.',
+        'Automated test suite of 122 test cases passing across MSVC, GCC, Clang, AddressSanitizer (ASan), and UndefinedBehaviorSanitizer (UBSan).'
       ],
       architecture: 'Source -> Lexer -> Parser -> Type Checker -> Bytecode Compiler -> Bytecode Verifier -> Virtual Machine -> Execution Output.',
       codeSnippet: {
@@ -145,10 +145,10 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Framework', value: 'egui / eframe' }
       ],
       highlights: [
-        'Developing interactive visualizations for a 150-problem roadmap across 18 algorithmic topic domains, with implementation and correctness validation still in progress.',
-        'Deterministic state snapshot model enabling bidirectional timeline scrubbing, variable speed playback (0.25x - 4.00x), and source line tracing.',
-        'Specialized typed renderers for arrays, linked lists, binary trees, graphs, heaps, and dynamic programming tables.',
-        'Instant web browser execution via WebAssembly without installation, alongside cross-platform native binaries.'
+        'Interactive visualization roadmap covering 150 algorithm problems across 18 topic domains, with implementation and correctness validation in active development.',
+        'Deterministic state snapshot model supporting bidirectional timeline stepping, variable-rate playback (0.25x to 4.00x), and source line execution tracing.',
+        'Typed canvas renderers for arrays, linked lists, binary trees, graphs, heaps, and dynamic programming state tables.',
+        'WebAssembly compilation for browser-based execution alongside native desktop binaries.'
       ],
       architecture: 'Deterministic generator functions emit Vec<Step> snapshots -> Engine manages timeline scrubbing & step playback -> Custom egui canvas components render typed visual states.',
       codeSnippet: {
@@ -176,7 +176,7 @@ frameout(damage(35, true)); // Outputs: 70`
       objectFit: 'contain',
       gradient: 'linear-gradient(135deg, #370617 0%, #6a040f 50%, #9d0208 100%)',
       path: '/project/pixelbuddy',
-      summary: 'Pixel art software tool for creating, editing, and managing sprites and animation frames in Rust and WebAssembly.',
+      summary: 'Pixel art sprite and animation editor implemented in Rust and compiled for native desktop and WebAssembly.',
       tags: ['Rust', 'WebAssembly', 'Pixel Art', 'Graphics', 'Desktop UI'],
       githubUrl: 'https://github.com/Rowrow620/pixelbuddy',
       liveUrl: 'https://rowrow620.github.io/PixelBuddy/',
@@ -186,8 +186,8 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Target', value: 'Native & WASM' }
       ],
       highlights: [
-        'Intuitive pixel art creation tool with multi-frame timeline animation management and real-time canvas previews.',
-        'Dual deployment model: standalone native desktop app or zero-install browser WebAssembly client.'
+        'Sprite editing interface with multi-frame timeline management, layer compositing, and canvas previews.',
+        'Deployment targets supporting native desktop binaries and client-side WebAssembly execution in the browser.'
       ]
 
         },
@@ -210,7 +210,7 @@ frameout(damage(35, true)); // Outputs: 70`
       ],
       gradient: 'linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%)',
       path: '/project/wsl-cam-bridge',
-      summary: 'A Windows system tray application built in Rust that bridges host webcam video into WSL2 over local HTTP and V4L2 loopback. Helps solve hardware forwarding limits on PCIe/MIPI cameras.',
+      summary: 'Windows system tray application built in Rust that bridges host webcam video into WSL2 via local HTTP and V4L2 loopback, resolving hardware forwarding limits on PCIe and MIPI cameras.',
       tags: ['Rust', 'WSL2', 'Windows Media Foundation', 'V4L2', 'MJPEG', 'OpenCV'],
       githubUrl: 'https://github.com/Rowrow620/wsl-cam-bridge',
       openSource: {
@@ -231,10 +231,10 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Protocol', value: 'MJPEG / HTTP' }
       ],
       highlights: [
-        'Captures video on the Windows host using Windows Media Foundation and streams it as MJPEG over local HTTP at localhost:8080.',
-        'Bypasses usbipd-win limitations for integrated laptop webcams operating over PCIe or MIPI buses where USB forwarding is unsupported.',
-        'Supports direct stream reading in WSL2 via OpenCV or mapping to a virtual /dev/video0 device using v4l2loopback.',
-        'Features a native Windows system tray menu for switching cameras, changing resolutions, and pausing streams.'
+        'Captures host video via Windows Media Foundation and streams MJPEG frames over local HTTP (localhost:8080).',
+        'Bypasses usbipd-win USB forwarding limitations for integrated laptop webcams connected over PCIe or MIPI buses.',
+        'Enables stream consumption inside WSL2 via OpenCV HTTP streams or kernel loopback mapping to /dev/video0 through v4l2loopback.',
+        'Windows system tray interface for runtime device selection, resolution configuration, and stream pausing.'
       ]
     },
     {
@@ -250,7 +250,7 @@ frameout(damage(35, true)); // Outputs: 70`
       objectFit: 'contain',
       gradient: 'linear-gradient(135deg, #132a13 0%, #31572c 50%, #4f772d 100%)',
       path: '/project/forge',
-      summary: 'C++20 dependency-aware native task runner with strict TOML schema validation and deterministic execution plans.',
+      summary: 'C++20 dependency-aware task runner with TOML configuration parsing and deterministic execution graphs.',
       tags: ['C++20', 'Build Systems', 'DAG Graph', 'TOML', 'CLI', 'Native GUI'],
       githubUrl: 'https://github.com/Rowrow620/forge',
       stats: [
@@ -259,9 +259,9 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Interface', value: 'Native GUI' }
       ],
       highlights: [
-        'Parses strict forge.toml target definitions and validates task dependency directed acyclic graphs (DAGs).',
-        'Deterministic execution planner with native Windows and POSIX process management, live stream forwarding, and fail-fast guarantees.',
-        'Native Forge Studio GUI displays dependency graphs, task status, worker activity, and execution logs.'
+        'Parses forge.toml target configurations and validates dependency directed acyclic graphs (DAGs) for cycle detection.',
+        'Execution planner supporting Windows and POSIX child process spawning, pipe multiplexing, and fail-fast termination.',
+        'Native Forge Studio GUI displaying topological dependency graphs, task execution states, worker thread utilization, and log output.'
       ]
 
     },
@@ -276,7 +276,7 @@ frameout(damage(35, true)); // Outputs: 70`
       size: 'medium',
       gradient: 'linear-gradient(135deg, #240046 0%, #3c096c 50%, #5a189a 100%)',
       path: '/project/unlimited-lob',
-      summary: 'A Harmony-based mod for Lobotomy Corporation that gives you unlimited LOB points (used to purchase agents) and infinite agent hiring slots in-game.',
+      summary: 'Harmony runtime modification for Lobotomy Corporation that overrides resource caps on LOB points and agent recruitment limits.',
       tags: ['C#', '.NET', 'Harmony Hooks', 'Game Modding', 'Lobotomy Corp'],
       githubUrl: 'https://github.com/Rowrow620/UnlimitedLOBPointsAndAgents',
       liveUrl: 'https://www.nexusmods.com/lobotomycorporation/mods/1282',
@@ -285,8 +285,8 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Framework', value: 'Harmony Hooks' }
       ],
       highlights: [
-        'Overrides in-game limits during runtime to provide unlimited LOB points and infinite agent recruitment slots.',
-        'Utilizes Harmony execution priority hooks (First/Last) to maintain compatibility with complex mod ecosystems.'
+        'Hooks game assembly routines at runtime to remove integer ceilings on LOB currency and eliminate max agent recruitment limits.',
+        'Configures Harmony execution priority attributes (Priority.First and Priority.Last) to prevent patch conflicts across modded assemblies.'
       ]
 
     },
@@ -302,7 +302,7 @@ frameout(damage(35, true)); // Outputs: 70`
       image: '/images/forwardfastspeed.webp',
       gradient: 'linear-gradient(135deg, #3d0066 0%, #5c0099 50%, #8f00ff 100%)',
       path: '/project/fastforwardspeed',
-      summary: 'Harmony-based runtime speed multiplier mod for Lobotomy Corporation unlocking customizable 4x, 8x, and 16x game loops.',
+      summary: 'Harmony runtime speed modification for Lobotomy Corporation implementing 4x, 8x, and 16x game loop multipliers with synchronized fixed physics timesteps.',
       tags: ['C#', '.NET', 'Harmony Hooks', 'Unity Engine', 'Game Modding', 'Tutorials'],
       githubUrl: 'https://github.com/Rowrow620/FastForwardSpeed',
       liveUrl: 'https://www.nexusmods.com/lobotomycorporation/mods/1281',
@@ -313,9 +313,9 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Tutorial', value: 'CustomSpeed Guide' }
       ],
       highlights: [
-        'Engineered dynamic game loop speed modifiers synchronizing Time.timeScale and Time.fixedDeltaTime for smooth high-speed gameplay without physics or UI desync.',
-        'Provided dual variants: FastForwardSpeed (1x, 4x, 8x) and EvenFasterForwardSpeed (1x, 8x, 16x) published to NexusMods.',
-        'Authored and published the Custom Speed Tutorial (CustomSpeedTutorial.md) guiding developers on decompiling, customizing multipliers, and recompiling C# Harmony patches.'
+        'Modifies GameManager speed levels by synchronizing Time.timeScale with proportional Time.fixedDeltaTime scaling to prevent physics desynchronization.',
+        'Packaged into two patch configurations: standard multipliers (1x, 4x, 8x) and extended multipliers (1x, 8x, 16x).',
+        'Documentation covering Unity game assembly decompilation with dnSpy, IL bytecode inspection, multiplier modification, and Harmony patch recompilation.'
       ],
       architecture: 'Harmony Postfix Hook -> Intercept GameManager.UpdateGameSpeed -> Recalculate Time.timeScale & synchronized Time.fixedDeltaTime.',
       codeSnippet: {
@@ -344,7 +344,7 @@ frameout(damage(35, true)); // Outputs: 70`
       size: 'medium',
       gradient: 'linear-gradient(135deg, #1f005c 0%, #5b0060 50%, #870160 100%)',
       path: '/project/kh-save-editor-keyblade',
-      summary: 'A browser-based save editor and transfer tool for the PC versions of the Kingdom Hearts Final Mix collection.',
+      summary: 'Client-side binary save file editor and slot transfer utility for PC versions of the Kingdom Hearts Final Mix collection.',
       tags: ['Browser Tool', 'Save Editor', 'Data Parsing', 'Game Modding', 'Kingdom Hearts'],
       githubUrl: 'https://github.com/Rowrow620/kh-save-editor-keyblade',
       liveUrl: 'https://rowrow620.github.io/kh-save-editor-keyblade/',
@@ -353,9 +353,9 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Supported Games', value: '3 Titles' }
       ],
       highlights: [
-        'Parses, modifies, and transfers save data for Kingdom Hearts Final Mix, Re:Chain of Memories, and Kingdom Hearts II Final Mix.',
-        'Supports editing character levels, EXP, abilities, Munny, Moogle Points, and farmable inventory completely in the browser.',
-        'Dynamically synchronizes party progression and stats without requiring any server-side validation or backend.'
+        'Parses, modifies, and transfers binary save data across Kingdom Hearts Final Mix, Re:Chain of Memories, and Kingdom Hearts II Final Mix.',
+        'Edits binary data offsets including character levels, experience points, equipped abilities, currencies, and item inventory tables.',
+        'Calculates and updates party progression offsets and stat data purely client-side without external backend dependencies.'
       ]
 
     },
@@ -369,14 +369,14 @@ frameout(damage(35, true)); // Outputs: 70`
       size: 'medium',
       gradient: 'linear-gradient(135deg, #181824 0%, #2a2a3c 50%, #3e3e54 100%)',
       path: '/project/ezslides',
-      summary: 'An in-game image and slide viewer for Final Fantasy XIV built for Dalamud, enabling raiders to load local strategy diagrams and navigate slides without alt-tabbing.',
+      summary: 'In-game image and slide presentation plugin for Final Fantasy XIV built on the Dalamud framework using C# and Dear ImGui.',
       tags: ['C#', '.NET', 'Dalamud', 'FFXIV', 'ImGui', 'Game UI'],
       githubUrl: 'https://github.com/Rowrow620/ezSlidesXIV',
       highlights: [
-        'Built for the Dalamud plugin framework using C# and ImGui to render strategy images and raid diagrams directly inside the game client.',
-        'Enables raiders to view strat slides in-game without requiring secondary monitors or disruptive alt-tabbing during high-difficulty encounters.',
-        'Features forward and backward slide navigation via on-screen controls, configurable keyboard shortcuts, slide index jumping, and auto-looping.',
-        'Includes borderless presentation, collapse-to-tab functionality to maximize screen space, and local folder auto-detection.'
+        'Renders local image collections and strategy diagrams directly into the DirectX 11 game viewport via Dalamud and Dear ImGui.',
+        'Provides an in-engine overlay window to view multi-slide diagrams during encounters without switching active OS windows.',
+        'Slide navigation controls including previous/next buttons, direct index jumping, configurable keybindings, and automated looping.',
+        'Supports borderless display modes, window collapsing to a minimal title tab, and automated directory polling for local image files.'
       ]
     },
     {
@@ -392,14 +392,14 @@ frameout(damage(35, true)); // Outputs: 70`
       size: 'medium',
       gradient: 'linear-gradient(135deg, #121826 0%, #1e293b 50%, #334155 100%)',
       path: '/project/xivlibra',
-      summary: 'A real-time combat and DPS meter for Final Fantasy XIV built for Dalamud, featuring direct action effect network hooking, party role filtering, and FFLogs export.',
+      summary: 'Real-time combat telemetry and damage meter plugin for Final Fantasy XIV built on Dalamud, FFXIVClientStructs, and Dear ImGui.',
       tags: ['C#', '.NET', 'Dalamud', 'FFXIV', 'FFXIVClientStructs', 'Memory Hooking', 'ImGui'],
       githubUrl: 'https://github.com/Rowrow620/XIVLibra',
       highlights: [
-        'Intercepts network combat packets at runtime by hooking into ActionEffectHandler::Receive via IGameInteropProvider and FFXIVClientStructs.',
-        'Tracks and calculates real-time damage dealt, healing done, and damage taken across players with pet and clone damage attribution.',
-        'Provides an interactive ImGui overlay with role filtering (All, Party, Tanks, Healers, DPS), collapsible solo view, and custom background opacity.',
-        'Maintains full encounter session history with boss-pull dropdowns and export capabilities to CSV, JSON, and FFLogs-ready log formats.'
+        'Intercepts combat network packets by hooking ActionEffectHandler::Receive via Dalamud IGameInteropProvider and FFXIVClientStructs function detours.',
+        'Aggregates damage dealt, effective healing, and damage taken with entity ownership attribution for pets and summoned entities.',
+        'Renders combat metrics via Dear ImGui with party role filtering (Tank, Healer, DPS), collapsible player views, and configurable window opacity.',
+        'Indexes encounter segmentation by combat state, supporting boss-pull history inspection and export to CSV, JSON, and standard log formats.'
       ]
     },
     {
@@ -417,7 +417,7 @@ frameout(damage(35, true)); // Outputs: 70`
       statusNote: 'Classic mode is fully playable with daily seeded puzzles, lore hints, and streak tracking. Evolved mode is a fully playable turn-based RPG battle encounter that connects Wordle guess accuracy to combat formulas, party stats, and enemy AI, with persistent multi-area progression in development.',
       gradient: 'linear-gradient(135deg, #08112d 0%, #19346f 50%, #d6b65f 100%)',
       path: '/project/wordkupo',
-      summary: 'A retro Final Fantasy-inspired word game built with React and TypeScript that combines a polished daily word puzzle with an authentic 16-bit turn-based battle engine where word-guessing mechanics directly drive RPG combat.',
+      summary: 'Final Fantasy-inspired word game and turn-based RPG battle engine built with React and TypeScript, integrating dictionary-validated word guessing with combat calculation mechanics.',
       tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Game UI', 'RPG Systems'],
       stats: [
         { label: 'Platform', value: 'Browser (Desktop & Mobile)' },
@@ -427,14 +427,14 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Save State', value: 'LocalStorage' }
       ],
       highlights: [
-        'Classic Mode (Daily Puzzle): Daily 5- or 6-letter seeded puzzle with 6 attempts, color-coded feedback (correct/present/absent), thematic Final Fantasy vocabulary, win-streak tracking, guess distribution charts, and retro clipboard sharing.',
-        'Mogbert the Moogle: Animated companion featuring typewriter dialogue, sound blips, reactive banter, and an optional Savage Mode for purists who prefer solving without hints.',
-        'Evolved Mode (RPG Combat Integration): Replaces the puzzle grid with an authentic Final Fantasy I GBA-style battle encounter with custom 4-character party creation across classic jobs (Warrior, Thief, Monk, Red Mage, White Mage, Black Mage).',
-        'Combat-Linked Word Mechanics: Guesses act as party attack rounds where greens and yellows boost damage output, solving triggers critical strikes, and missed letters expose heroes to enemy counterattacks.',
-        'Interactive Battle Command Window: Full combat actions featuring Attack, Magic (job-specific spells like Cure, Fire, and Thunder with MP pools), Defend (damage halving), and Items, calibrated to exact GBA dual-window HUD proportions.',
-        '2.5D Battle Formation Engine: Implemented a feet-anchored coordinate system (translate(-50%, -100%)) across a 3:2 aspect-ratio frame, ensuring varying sprite dimensions remain grounded on the terrain plane without floating.',
-        'Pixel-Perfect Typography & Upscaling: Custom TrueType font (FinalFantasy1.ttf) rendered with disabled font-smoothing and unbolded 1-pixel outlines, alongside 70+ battlefield environments and sprites upscaled 4× using nearest-neighbor scaling.',
-        'Dynamic Audio & Theme Engine: Theme music tracks (Title, Town, and Battle), retro sound effects (cursor navigation, spell audio, victory fanfares, error buzzers), and 3 distinct visual themes (Classic FF Blue, Midnight Indigo, and Authentic NES/GBA border styling).'
+        'Classic Mode: Seeded daily 5- and 6-letter puzzles with 6 guess attempts, positional letter feedback (correct, present, absent), domain-specific dictionary filtering, streak calculation, and clipboard result export.',
+        'Companion System: Dialogue engine implementing character-by-character typewriter rendering, Web Audio API sound synthesis, contextual hints, and a toggleable hint-free mode.',
+        'Evolved Mode: Turn-based RPG encounter system featuring a 4-character party composed from 6 selectable job classes (Warrior, Thief, Monk, Red Mage, White Mage, Black Mage) with distinct stat baselines.',
+        'Combat Evaluation Pipeline: Translates guess evaluation arrays into combat inputs; correct letter placements calculate damage multipliers, word solutions trigger critical hit multipliers, and invalid letters trigger enemy attack turns.',
+        'Battle Command Interface: Action selection supporting physical attacks, job-specific magic spells with MP consumption pools, defense damage reduction modifiers, and item consumption.',
+        '2.5D Battle Coordinate Engine: Origin-anchored positioning system (translate(-50%, -100%)) within a fixed 3:2 viewport, normalizing ground-plane alignment across heterogeneous sprite dimensions.',
+        'Typography and Asset Scaling: Custom TrueType font rendered with disabled font antialiasing and 1px text borders, alongside background and sprite assets scaled 4x via nearest-neighbor interpolation.',
+        'Audio and Theme Architecture: Synthesizer and SFX management for menu navigation, combat cues, and background audio loops, paired with CSS custom-property theme swapping.'
       ],
       architecture: `React / Vite UI Layer
   ├── Title Menu & Party Naming Flow (Job selection & stat baselines)
@@ -458,7 +458,7 @@ frameout(damage(35, true)); // Outputs: 70`
       size: 'medium',
       gradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
       path: '/project/art-portfolio',
-      summary: 'A scalable, responsive art portfolio built for a freelance client using React, TypeScript, and a monorepo architecture.',
+      summary: 'Client art portfolio and gallery application built with React, TypeScript, and Vite within an npm workspaces monorepo.',
       tags: ['React', 'TypeScript', 'Vite', 'Monorepo', 'CSS Modules'],
       githubUrl: 'https://github.com/ssuhshinji/art-portfolio',
       liveUrl: 'https://ssuhshinji.github.io/art-portfolio/',
@@ -468,9 +468,9 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Framework', value: 'React + Vite' }
       ],
       highlights: [
-        'Architected a scalable monorepo workspace to share core UI components across multiple distinct portfolio sites.',
-        'Engineered a highly responsive, masonry-style image grid for optimized artwork viewing across desktop and mobile.',
-        'Implemented strict TypeScript interfaces for content management, allowing the client to easily update their gallery via structured configuration files.'
+        'Configured npm workspaces monorepo structure to share UI design tokens and components across distinct site packages.',
+        'CSS grid and column-based masonry gallery layout adapting dynamically across responsive viewport breakpoints.',
+        'Structured TypeScript interfaces for portfolio metadata and gallery item schemas, enabling static data updates without modifying rendering logic.'
       ]
     },
     {
@@ -483,7 +483,7 @@ frameout(damage(35, true)); // Outputs: 70`
       size: 'medium',
       gradient: 'linear-gradient(135deg, #1e1e2f 0%, #2a2a40 50%, #3f3f5a 100%)',
       path: '/project/personal-portfolio',
-      summary: 'This portfolio! A personal developer portfolio showcasing my systems engineering, game modding, and full-stack web projects.',
+      summary: 'Personal portfolio web application and project catalog built with React, TypeScript, and Vite within a monorepo workspace.',
       tags: ['React', 'TypeScript', 'Vite', 'CSS Modules', 'React Router'],
       githubUrl: 'https://github.com/Rowrow620/MyPortfolio',
       liveUrl: 'https://rowrow620.github.io/MyPortfolio/',
@@ -492,9 +492,9 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Styling', value: 'CSS Modules' }
       ],
       highlights: [
-        'Developed a dynamic React front-end utilizing a centralized TypeScript configuration for seamless project additions and content updates.',
-        'Designed a sleek, dark-themed UI with custom CSS Modules, fluid responsive layouts, and interactive project masonry grids.',
-        'Configured automated production builds and deployments to GitHub Pages using Vite optimized bundling.'
+        'Centralized TypeScript data configuration defining project metadata, categorization, deep links, and navigation hierarchy.',
+        'Scoped styling implementation using CSS Modules, CSS custom properties for theming, and responsive layout grids.',
+        'Static build generation via Vite with automated asset optimization and deployment workflows for GitHub Pages.'
       ]
     },
     {
@@ -511,7 +511,7 @@ frameout(damage(35, true)); // Outputs: 70`
       statusNote: 'The core distributed compute pipeline is functional. Desktop interface polish and additional end-to-end workflow validation are still in progress.',
       gradient: 'linear-gradient(135deg, #1f1c2c 0%, #302b63 50%, #0f0c20 100%)',
       path: '/project/anvilmesh',
-      summary: 'Durable multi-tenant distributed compute service coordinating CPU and CUDA GPU workloads across Go and C++20 workers.',
+      summary: 'Distributed compute service coordinating CPU and CUDA GPU workloads across Go coordinators and C++20 workers.',
       tags: ['Go', 'C++20', 'CUDA', 'PostgreSQL', 'Distributed Systems', 'MinIO / S3', 'Docker'],
       githubUrl: 'https://github.com/Rowrow620/AnvilMesh',
       stats: [
@@ -521,10 +521,10 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Chaos Testing', value: '100% Pass' }
       ],
       highlights: [
-        'Architected durable distributed compute engine coordinating async job execution across Go coordinators and native C++20/CUDA workers.',
-        'Engineered custom CUDA image processing kernels (Gaussian blur, Sobel, grayscale) delivering 20.47× speedup at 4K UHD vs deterministic CPU reference.',
-        'Implemented lease-based state machine in PostgreSQL with row-level locking (SKIP LOCKED), monotonic tokens, and strict stale zombie worker rejection.',
-        'Built versioned binary TCP wire protocol with length prefixes, CRC32 checksums, and MinIO/S3 content-addressed SHA-256 object storage.'
+        'Distributed compute engine coordinating asynchronous job execution between Go orchestrators and native C++20/CUDA worker processes.',
+        'CUDA image processing kernels (Gaussian blur, Sobel edge detection, grayscale conversion) achieving 20.47x speedup on 4K images relative to single-threaded CPU execution.',
+        'Lease-based job state machine in PostgreSQL utilizing row-level locking (FOR UPDATE SKIP LOCKED), monotonic fencing tokens, and heartbeat-based worker timeout expiration.',
+        'Binary TCP wire protocol implementing frame length prefixing and CRC32 payload checksums, integrated with S3-compatible content-addressed SHA-256 artifact storage.'
       ],
       architecture: 'Client / CLI -> REST API (:8080) -> PostgreSQL 16+ (ACID Leases) -> Binary TCP Coordinator -> C++20 / CUDA Workers -> MinIO/S3 (SHA-256 Storage).',
       codeSnippet: {
@@ -558,7 +558,7 @@ frameout(damage(35, true)); // Outputs: 70`
       objectFit: 'contain',
       gradient: 'linear-gradient(135deg, #2b0938 0%, #511845 50%, #8b263e 100%)',
       path: '/project/traceforge',
-      summary: 'High-performance C++ tracing system with wait-free shared memory IPC queue and fast Rust CLI analysis.',
+      summary: 'C++ runtime event tracing system with wait-free shared-memory IPC and Rust CLI analysis tools.',
       tags: ['C++20', 'Rust', 'Shared Memory IPC', 'Lock-Free', 'Perfetto Export', 'Windows API'],
       githubUrl: 'https://github.com/Rowrow620/TraceForge',
       stats: [
@@ -567,9 +567,9 @@ frameout(damage(35, true)); // Outputs: 70`
         { label: 'Core Stack', value: 'C++20 & Rust' }
       ],
       highlights: [
-        'Zero-slowdown runtime instrumentation streaming profiling events directly into background daemon via named shared memory IPC.',
-        'Lock-free, wait-free ring buffer for thread-local event capture with configurable drop and backpressure policies.',
-        'Fast Rust CLI analysis parser providing instant category breakdowns and Perfetto timeline exports for Chrome Tracing.'
+        'Thread-local instrumentation macros streaming structured event payloads directly to a background collection daemon via named shared memory.',
+        'Wait-free circular ring buffer implementing atomic sequence counters for thread-local event enqueueing with configurable overflow policies.',
+        'Rust CLI analysis parser supporting binary trace decoding, statistical aggregation by category, and Perfetto/Chrome Tracing JSON export.'
       ],
       architecture: 'C++ Target App (Wait-Free IPC Queue) -> Shared Memory -> Background Daemon (traceforged.exe) -> .tftrace file -> Rust CLI Analyzer / Perfetto Viewer.',
       codeSnippet: {
