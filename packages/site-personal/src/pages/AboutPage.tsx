@@ -60,7 +60,7 @@ const skillCategories: SkillCategory[] = [
 
 const timelineEvents = [
   {
-    role: 'M.S. in Computer Science (GPA: 3.5)',
+    role: 'M.S. in Computer Science',
     company: 'California State University, Chico (CSU Chico)',
     period: 'Expected Dec 2027',
     description:
@@ -81,7 +81,7 @@ const timelineEvents = [
       'Evaluated, audited, and debugged AI-generated code across Python, C++, and Java to improve model accuracy, logical safety, and edge-case handling.'
   },
   {
-    role: 'B.S. in Computer Science (GPA: 3.84)',
+    role: 'B.S. in Computer Science',
     company: 'Southern New Hampshire University (SNHU)',
     period: 'Dec 2024',
     description:

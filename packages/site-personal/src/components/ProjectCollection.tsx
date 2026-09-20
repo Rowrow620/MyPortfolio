@@ -6,7 +6,9 @@ import styles from './ProjectCollection.module.css';
 const overviewTitles: Record<string, string> = {
   anvilmesh: 'Distributed CPU + GPU compute',
   traceforge: 'Low-overhead runtime tracing',
-  'unlimited-lob': 'Custom agent hiring'
+  'unlimited-lob': 'Custom agent hiring',
+  retrosynth: 'Polyphonic chiptune synthesizer',
+  jobbuddy: 'Resume tailoring & automation copilot'
 };
 
 const categoryLabels: Record<string, string> = {

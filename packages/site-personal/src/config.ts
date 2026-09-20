@@ -26,7 +26,9 @@ export const siteConfig: SiteConfig = {
       children: [
         { label: 'AlgoBuddy (NeetCode 150 Visualizer)', path: '/project/algobuddy' },
         { label: 'PixelBuddy (Pixel Art Editor)', path: '/project/pixelbuddy' },
-        { label: 'wsl-cam-bridge (Webcam Bridge)', path: '/project/wsl-cam-bridge' }
+        { label: 'wsl-cam-bridge (Webcam Bridge)', path: '/project/wsl-cam-bridge' },
+        { label: 'RetroBitSynth (Chiptune Synthesizer)', path: '/project/retrosynth' },
+        { label: 'JobBuddy (AI Resume & Job Application Copilot)', path: '/project/jobbuddy' }
       ]
     },
     {
@@ -236,6 +238,113 @@ frameout(damage(35, true)); // Outputs: 70`
         'Enables stream consumption inside WSL2 via OpenCV HTTP streams or kernel loopback mapping to /dev/video0 through v4l2loopback.',
         'Windows system tray interface for runtime device selection, resolution configuration, and stream pausing.'
       ]
+    },
+    {
+      id: 'retrosynth',
+      title: 'RetroBitSynth',
+      category: 'tools',
+      size: 'medium',
+      image: 'https://placehold.co/1200x600/181824/ffffff?text=RetroBitSynth+Chiptune+Synthesizer',
+      imageAlt: 'RetroBitSynth 8-voice polyphonic synthesizer interface with oscilloscope and synthesis controls',
+      showOnHome: true,
+      gradient: 'linear-gradient(135deg, #1f1235 0%, #321e54 50%, #4b2a7a 100%)',
+      path: '/project/retrosynth',
+      summary: '8-voice polyphonic synthesizer built in C++20 with JUCE, implementing real-time dual-oscillator synthesis, NES 2A03 4-bit triangle and LFSR noise generation, DAC decimation, and a 60 FPS CRT oscilloscope.',
+      tags: ['C++20', 'JUCE', 'VST3', 'Audio DSP', 'Real-Time Audio', 'FL Studio'],
+      githubUrl: 'https://github.com/Rowrow620/RetroSynthVST',
+      openSource: {
+        summary: 'RetroBitSynth is an open-source audio plugin released under the MIT License.',
+        practices: [
+          'Source code and build instructions for VST3 and Standalone targets are hosted on GitHub.',
+          'Includes CMake configuration supporting Visual Studio 2022 and automated deployment scripts for system VST3 directories.'
+        ],
+        links: [
+          { label: 'GitHub Repository', url: 'https://github.com/Rowrow620/RetroSynthVST' },
+          { label: 'MIT License', url: 'https://github.com/Rowrow620/RetroSynthVST/blob/main/LICENSE' }
+        ]
+      },
+      stats: [
+        { label: 'Standard', value: 'C++20' },
+        { label: 'Framework', value: 'JUCE 7' },
+        { label: 'Formats', value: 'VST3 & Standalone' },
+        { label: 'Polyphony', value: '8 Voices' }
+      ],
+      highlights: [
+        'Dual-oscillator audio engine supporting PWM pulse (5%–95% duty cycle), NES 2A03 16-step quantized triangle, band-limited sawtooth, sine, and 15-bit LFSR pseudo-random noise.',
+        'DAC degradation processor implementing continuously variable bit-depth quantization (16-bit to 2-bit) and zero-order hold sample rate decimation (1x to 32x clock reduction).',
+        'Arcade arpeggiator engine supporting standard chord cycling (Up, Down, Up/Down), single-key triad expansions (Major, Minor, Octave), and tempo clock divisions up to 1/64 notes.',
+        '2-pole resonant lowpass filter (20 Hz–20,000 Hz) with envelope modulation depth and 1ms fast-attack ADSR amplitude envelopes.',
+        'Real-time CRT oscilloscope visualizer rendering audio buffer waveforms at 60 FPS alongside full VST3 parameter automation and MIDI CC mapping.'
+      ],
+      architecture: 'MIDI In -> Polyphonic Voice Allocator -> Dual Chiptune Oscillators -> 2-Pole Resonant Lowpass Filter -> ADSR Envelope -> BitCrusher (Quantize + Decimate) -> Master Bus -> CRT Oscilloscope -> Audio Output Buffer (VST3 / Standalone).',
+      codeSnippet: {
+        language: 'cpp',
+        filename: 'Source/DSP/BitCrusher.h',
+        code: `void process(float& sampleL, float& sampleR) noexcept {
+    sampleCounter += 1.0f;
+    if (sampleCounter >= downsampleFactor) {
+        sampleCounter -= downsampleFactor;
+        holdSampleL = quantize(sampleL);
+        holdSampleR = quantize(sampleR);
+    }
+    sampleL = holdSampleL;
+    sampleR = holdSampleR;
+}`
+      }
+    },
+    {
+      id: 'jobbuddy',
+      title: 'JobBuddy',
+      category: 'tools',
+      size: 'medium',
+      image: '/images/jobbuddy.png',
+      imageAlt: 'JobBuddy desktop application interface showing project pool selector, job description analyzer, and live LaTeX editor with 1-page meter',
+      imagePresentation: 'demo',
+      aspectRatio: '1024 / 632',
+      objectFit: 'contain',
+      showOnHome: false,
+      gradient: 'linear-gradient(135deg, #0d1b2a 0%, #1a2a3a 50%, #203a43 100%)',
+      path: '/project/jobbuddy',
+      summary: 'Desktop developer utility built in Python and WebView2 that analyzes job requirements via the Gemini Flash API, selects relevant project items from a catalog, and compiles a tailored 1-page LaTeX resume with automated PDF generation in ~1.5s.',
+      tags: ['Python', 'Playwright', 'WebView2', 'LaTeX', 'Tectonic', 'Gemini API'],
+      githubUrl: 'https://github.com/Rowrow620/JobBuddy',
+      openSource: {
+        summary: 'JobBuddy is an open-source developer tool released under the MIT License.',
+        practices: [
+          'Full source code, desktop build configurations, and evaluation suites are hosted on GitHub.',
+          'Includes portable Tectonic compiler integration and Playwright browser copilot automation scripts.'
+        ],
+        links: [
+          { label: 'GitHub Repository', url: 'https://github.com/Rowrow620/JobBuddy' },
+          { label: 'MIT License', url: 'https://github.com/Rowrow620/JobBuddy/blob/main/LICENSE' }
+        ]
+      },
+      stats: [
+        { label: 'Runtime', value: 'Python 3.12 & WebView2' },
+        { label: 'LLM Engine', value: 'Gemini Flash' },
+        { label: 'Compiler', value: 'Tectonic XeTeX' },
+        { label: 'Browser Engine', value: 'Playwright' }
+      ],
+      highlights: [
+        'Requirement analysis engine using the Gemini Flash API and structured Pydantic outputs to extract technical keywords and rank catalog projects by relevancy.',
+        'Self-contained Tectonic XeTeX compilation pipeline rendering LaTeX documents to PDF in ~1.5s with automated page-budget detection to enforce 1-page constraints.',
+        'Native desktop GUI implemented with PyWebView / WebView2, providing interactive project pool management, live LaTeX source editing, and PDF viewport synchronization.',
+        'Browser automation copilot built on Playwright for job application workflows, supporting form-field detection, resume PDF attachment, and human-in-the-loop review boundaries.'
+      ],
+      architecture: 'Job Description Input -> Gemini Flash Requirement Extractor -> Project Re-Ranker -> Jinja2 LaTeX Template -> Tectonic XeTeX Compiler (1-Page Budget Check) -> WebView2 Desktop UI / Playwright Automation Copilot.',
+      codeSnippet: {
+        language: 'python',
+        filename: 'src/compiler.py',
+        code: `def compile_latex(tex_content: str, output_pdf: Path) -> CompilationResult:
+    cmd = [get_tectonic_binary(), "--outdir", str(output_dir), str(tex_path)]
+    subprocess.run(cmd, check=True, capture_output=True)
+    page_count = len(PdfReader(str(output_pdf)).pages)
+    return CompilationResult(
+        pdf_path=output_pdf,
+        page_count=page_count,
+        is_single_page=(page_count == 1)
+    )`
+      }
     },
     {
 
