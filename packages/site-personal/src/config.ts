@@ -24,6 +24,7 @@ export const siteConfig: SiteConfig = {
       label: 'Tools & Visualizers',
       path: '/category/tools',
       children: [
+        { label: 'Piano Analyzer', path: '/project/piano-analyzer' },
         { label: 'AlgoBuddy (NeetCode 150 Visualizer)', path: '/project/algobuddy' },
         { label: 'PixelBuddy (Pixel Art Editor)', path: '/project/pixelbuddy' },
         { label: 'wsl-cam-bridge (Webcam Bridge)', path: '/project/wsl-cam-bridge' },
@@ -55,6 +56,43 @@ export const siteConfig: SiteConfig = {
     { label: 'Contact', path: '/contact' }
   ],
   projects: [
+    {
+      id: 'piano-analyzer',
+      title: 'Piano Analyzer',
+      category: 'tools',
+      size: 'medium',
+      image: '/images/piano-analyzer-octaves.png',
+      imageAlt: 'Piano recording annotated with detected F4 and F5 notes, calibrated keys, and hand landmarks',
+      imageCaption: 'Detected notes, keyboard calibration, and hand tracking in an annotated recording.',
+      imagePresentation: 'demo',
+      aspectRatio: '1888 / 1080',
+      objectFit: 'contain',
+      additionalMedia: [
+        {
+          image: '/images/piano-analyzer-sharps.png',
+          imageAlt: 'Annotated recording with A-sharp3 and A-sharp4 detected while tracking both hands',
+          imageCaption: 'Two-hand tracking with detected notes on black keys.',
+          aspectRatio: '1920 / 1080'
+        },
+        {
+          image: '/images/piano-analyzer-c5.png',
+          imageAlt: 'Annotated recording with C5 detected and hand landmarks over the keyboard',
+          imageCaption: 'Single-note detection with the right hand at the keyboard.',
+          aspectRatio: '1905 / 1059'
+        }
+      ],
+      path: '/project/piano-analyzer',
+      summary: 'Converts recorded piano performances into MIDI and annotated video using audio transcription and hand tracking.',
+      tags: ['Python', 'OpenCV', 'MediaPipe', 'PyTorch', 'Transkun', 'MIDI'],
+      githubUrl: 'https://github.com/Rowrow620/PianoAnalyzer',
+      highlights: [
+        'Runs Transkun audio transcription and MediaPipe fingertip tracking independently, with concurrent analysis.',
+        'Combines audio notes with visual evidence. Notes without enough visual support remain in the MIDI and are flagged for review.',
+        'Exports MIDI, annotated video with the original audio, and an optional CSV of note evidence.',
+        'Uses manual C3-C7 keyboard calibration. Note endings and velocity come from audio estimates.'
+      ],
+      architecture: 'Recording + keyboard calibration -> parallel audio transcription and fingertip tracking -> note fusion and review flags -> MIDI, annotated video, and evidence CSV.'
+    },
 {
       id: 'framestepp',
       title: 'FrameStep++',
